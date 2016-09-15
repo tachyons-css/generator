@@ -5,7 +5,8 @@
   "version": "0.1.0",
   "main": "index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "config.json"
   ],
   "scripts": {
     "test": "ava"
@@ -13,7 +14,9 @@
   "repository": "johnotander/tachyons-generator",
   "keywords": [],
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "tachyons": "^4.0.6"
+  },
   "devDependencies": {
     "ava": "*"
   }

@@ -1,8 +1,8 @@
 import test from 'ava'
+import config from './config.json'
 import tachyonsGenerator from './'
 
 test('tachyons-generator does something awesome', t => {
-  t.plan(1)
-
-  t.true(tachyonsGenerator())
+  console.log(tachyonsGenerator(config).spacing())
+  t.pass()
 })
