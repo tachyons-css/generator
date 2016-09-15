@@ -2,7 +2,7 @@
   "heading-font-family": "sans-serif",
   "body-font-family": "sans-serif",
   "code-font-family": "monospace",
-  "type-scale": [
+  "typeScale": [
     3, 2.25, 1.5, 1.25, 1, 0.875
   ],
   "baseScale": 16,

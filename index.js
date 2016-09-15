@@ -1,8 +1,9 @@
 'use strict'
 
 const defaultConfig = require('./config.json')
-const spacingUtils = require('./lib/spacing-utils')
-const colorUtils = require('./lib/color-utils')
+const typeUtils = require('./lib/type-scale')
+const spacingUtils = require('./lib/spacing')
+const colorUtils = require('./lib/color')
 
 module.exports = function tachyonsGenerator (config) {
   const _config = Object.assign({}, config, defaultConfig)
@@ -20,6 +21,26 @@ module.exports = function tachyonsGenerator (config) {
       return [key, `screen and (min-width: ${val})`]
     }
   })
+
+  generator.typeScale = () => {
+    const _typeScale = []
+
+    for (let i = 0; i < _config.typeScale.length; i++) {
+      _typeScale.push(typeUtils(i + 1, _config.typeScale[i]))
+    }
+
+    mediaQueries.forEach(mq => {
+      _typeScale.push(`@media ${mq[1]} {`)
+
+      for (let i = 0; i < _config.typeScale.length; i++) {
+        _typeScale.push(typeUtils(i + 1, _config.typeScale[i], { postfix: '-' + mq[0] }))
+      }
+
+      _typeScale.push('}')
+    })
+
+    return _typeScale.join('\n')
+  }
 
   generator.spacing = () => {
     const _spacing = []
