@@ -5,8 +5,8 @@ const typeUtils = require('./lib/type-scale')
 const spacingUtils = require('./lib/spacing')
 const colorUtils = require('./lib/color')
 
-module.exports = function tachyonsGenerator (config) {
-  const _config = Object.assign({}, config, defaultConfig)
+module.exports = config => {
+  const _config = Object.assign({}, config || {}, defaultConfig)
 
   const mediaQueries = _config.customMedia.map((breakpoint, i) => {
     const nextBreakpoint = _config.customMedia[i+1]
@@ -60,13 +60,7 @@ module.exports = function tachyonsGenerator (config) {
     return _spacing.join('\n')
   }
 
-  generator.colors = () => {
-    const _colors = []
-
-    _colors.push(colorUtils(_config.colors))
-
-    return _colors.join('\n')
-  }
+  generator.colors = () => colorUtils(_config.colors)).join('\n')
 
   function generator () {}
   return generator
