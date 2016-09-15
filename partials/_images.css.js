@@ -1,0 +1,10 @@
+module.exports = `/*
+
+   IMAGES
+   Docs: http://tachyons.io/docs/elements/images/
+
+*/
+
+/* Responsive images! */
+
+img { max-width: 100%; }`

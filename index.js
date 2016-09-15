@@ -4,6 +4,7 @@ const defaultConfig = require('./config.json')
 const typeUtils = require('./lib/type-scale')
 const spacingUtils = require('./lib/spacing')
 const colorUtils = require('./lib/color')
+const mqify = require('./lib/mqify')
 
 module.exports = config => {
   const _config = Object.assign({}, config || {}, defaultConfig)
@@ -21,6 +22,40 @@ module.exports = config => {
       return [key, `screen and (min-width: ${val})`]
     }
   })
+
+  generator.other = () => {
+    return [
+      mqify(require('./partials/_background-size.css'), mediaQueries),
+      mqify(require('./partials/_background-position.css'), mediaQueries),
+      mqify(require('./partials/_outlines.css'), mediaQueries),
+      mqify(require('./partials/_borders.css'), mediaQueries),
+      mqify(require('./partials/_border-radius.css'), mediaQueries),
+      mqify(require('./partials/_border-style.css'), mediaQueries),
+      mqify(require('./partials/_border-widths.css'), mediaQueries),
+      mqify(require('./partials/_box-shadow.css'), mediaQueries),
+      mqify(require('./partials/_coordinates.css'), mediaQueries),
+      mqify(require('./partials/_clears.css'), mediaQueries),
+      mqify(require('./partials/_display.css'), mediaQueries),
+      mqify(require('./partials/_flexbox.css'), mediaQueries),
+      mqify(require('./partials/_floats.css'), mediaQueries),
+      mqify(require('./partials/_font-style.css'), mediaQueries),
+      mqify(require('./partials/_font-weight.css'), mediaQueries),
+      mqify(require('./partials/_heights.css'), mediaQueries),
+      mqify(require('./partials/_letter-spacing.css'), mediaQueries),
+      mqify(require('./partials/_line-height.css'), mediaQueries),
+      mqify(require('./partials/_max-widths.css'), mediaQueries),
+      mqify(require('./partials/_widths.css'), mediaQueries),
+      mqify(require('./partials/_overflow.css'), mediaQueries),
+      mqify(require('./partials/_position.css'), mediaQueries),
+      mqify(require('./partials/_opacity.css'), mediaQueries),
+      mqify(require('./partials/_text-decoration.css'), mediaQueries),
+      mqify(require('./partials/_text-align.css'), mediaQueries),
+      mqify(require('./partials/_text-transform.css'), mediaQueries),
+      mqify(require('./partials/_typography.css'), mediaQueries),
+      mqify(require('./partials/_visibility.css'), mediaQueries),
+      mqify(require('./partials/_white-space.css'), mediaQueries),
+    ].join('\n')
+  }
 
   generator.typeScale = () => {
     const _typeScale = []
@@ -60,7 +95,7 @@ module.exports = config => {
     return _spacing.join('\n')
   }
 
-  generator.colors = () => colorUtils(_config.colors)).join('\n')
+  generator.colors = () => colorUtils(_config.colors)
 
   function generator () {}
   return generator

@@ -6,5 +6,7 @@ test('tachyons-generator does something awesome', t => {
   console.log(tachyonsGenerator(config).spacing())
   console.log(tachyonsGenerator(config).colors())
   console.log(tachyonsGenerator(config).typeScale())
+  console.log(tachyonsGenerator(config).other())
+  require('fs').writeFileSync('out.css', tachyonsGenerator(config).other())
   t.pass()
 })
