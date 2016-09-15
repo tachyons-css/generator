@@ -6,7 +6,7 @@ Inspiration from [this tachyons issue](https://github.com/tachyons-css/tachyons/
 ## Installation
 
 ```bash
-npm install --save tachyons-generator
+npm i -S tachyons-generator
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install --save tachyons-generator
 const tachyonsGenerator = require('tachyons-generator')
 const config = require('./config.json')
 
-console.log(tachyonsGenerator(config))
+console.log(tachyonsGenerator(config)) // => { ... }
 ```
 
 #### Example config
