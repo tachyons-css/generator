@@ -1,13 +1,12 @@
 {
-  "heading-font-family": "sans-serif",
-  "body-font-family": "sans-serif",
-  "code-font-family": "monospace",
   "typeScale": [
     3, 2.25, 1.5, 1.25, 1, 0.875
   ],
-  "baseScale": 16,
-  "ratio": 1.5,
-  "spacingCount": 6,
+  "spacing": {
+    "root": 8,
+    "ratio": 2,
+    "steps": 6
+  },
   "customMedia": [
     { "m": 48 },
     { "l": 64 },

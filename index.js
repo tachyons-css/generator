@@ -45,13 +45,13 @@ module.exports = function tachyonsGenerator (config) {
   generator.spacing = () => {
     const _spacing = []
 
-    for (let i = 0; i <= _config.spacingCount; i++) {
-      _spacing.push(spacingUtils(i, _config.baseScale))
+    for (let i = 0; i <= _config.spacing.steps; i++) {
+      _spacing.push(spacingUtils(i, _config.spacing.ratio))
 
       mediaQueries.forEach(mq => {
         _spacing.push(`
           @media ${mq[1]} {
-            ${spacingUtils(i, _config.baseScale, { postfix: '-' + mq[0] })}
+            ${spacingUtils(i, _config.spacing.ratio, { postfix: '-' + mq[0] })}
           }
         `)
       })
