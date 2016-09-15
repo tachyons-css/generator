@@ -4,5 +4,6 @@ import tachyonsGenerator from './'
 
 test('tachyons-generator does something awesome', t => {
   console.log(tachyonsGenerator(config).spacing())
+  console.log(tachyonsGenerator(config).colors())
   t.pass()
 })

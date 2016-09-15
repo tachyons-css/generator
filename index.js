@@ -42,15 +42,7 @@ module.exports = function tachyonsGenerator (config) {
   generator.colors = () => {
     const _colors = []
 
-    _colors.push(colorUtils(colors))
-
-    mediaQueries.forEach(mq => {
-      _colors.push(`
-        @media ${mq[1]} {
-          ${colorUtils(colors, { postfix: '-' + mq[0] })}
-        }
-      `)
-    })
+    _colors.push(colorUtils(_config.colors))
 
     return _colors.join('\n')
   }
