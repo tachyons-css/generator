@@ -13,14 +13,14 @@ npm install --save tachyons-generator
 
 ```javascript
 const tachyonsGenerator = require('tachyons-generator')
-const config = require('config.json')
+const config = require('./config.json')
 
 console.log(tachyonsGenerator(config))
 ```
 
 #### Example config
 
-```json
+```js
 {
   "font-family": "sans-serif",
   "sans-font-family": "sans-serif",
