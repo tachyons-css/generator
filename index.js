@@ -8,6 +8,7 @@ const mqify = require('./lib/mqify')
 
 module.exports = config => {
   const _config = Object.assign({}, defaultConfig, config || {})
+  const colors = colorUtils(_config.colors)
 
   const mediaQueries = _config.customMedia.map((breakpoint, i) => {
     const nextBreakpoint = _config.customMedia[i+1]
@@ -23,17 +24,20 @@ module.exports = config => {
     }
   })
 
-  generator.other = () => {
+  generator.generate = () => {
     return [
+      { backgroundColor: colors.bg() },
       { backgroundSize: mqify(require('./partials/_background-size.css'), mediaQueries) },
       { backgroundPosition: mqify(require('./partials/_background-position.css'), mediaQueries) },
       { borders: mqify(require('./partials/_borders.css'), mediaQueries) },
+      { borderColor: colors.border() },
       { borderRadius: mqify(require('./partials/_border-radius.css'), mediaQueries) },
       { borderStyle: mqify(require('./partials/_border-style.css'), mediaQueries) },
       { borderWidths: mqify(require('./partials/_border-widths.css'), mediaQueries) },
       { boxShadow: mqify(require('./partials/_box-shadow.css'), mediaQueries) },
       { boxSizing: require('./partials/_box-sizing.css') },
       { code: require('./partials/_code.css') },
+      { color: colors.text() },
       { coordinates: mqify(require('./partials/_coordinates.css'), mediaQueries) },
       { clears: mqify(require('./partials/_clears.css'), mediaQueries) },
       { display: mqify(require('./partials/_display.css'), mediaQueries) },
@@ -46,6 +50,7 @@ module.exports = config => {
       { links: require('./partials/_links.css') },
       { lists: require('./partials/_lists.css') },
       { heights: mqify(require('./partials/_heights.css'), mediaQueries) },
+      { hover: colors.hover() },
       { images: require('./partials/_images.css') },
       { letterSpacing: mqify(require('./partials/_letter-spacing.css'), mediaQueries) },
       { lineHeight: mqify(require('./partials/_line-height.css'), mediaQueries) },
@@ -105,8 +110,6 @@ module.exports = config => {
 
     return _spacing.join('\n')
   }
-
-  generator.colors = () => colorUtils(_config.colors)
 
   function generator () {}
   return generator
