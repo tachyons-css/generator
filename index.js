@@ -1,7 +1,7 @@
 'use strict'
 
 const defaultConfig = require('./config.json')
-const assembeCss = require('./lib/assemble-css')
+const assembleCss = require('./lib/assemble-css')
 const typeUtils = require('./lib/type-scale')
 const spacingUtils = require('./lib/spacing')
 const colorUtils = require('./lib/color')
@@ -38,7 +38,7 @@ module.exports = config => {
       boxShadow: mqify(require('./partials/_box-shadow.css'), mediaQueries),
       boxSizing: require('./partials/_box-sizing.css'),
       code: require('./partials/_code.css'),
-      color: colors.variables(),
+      colors: colors.variables(),
       coordinates: mqify(require('./partials/_coordinates.css'), mediaQueries),
       clears: mqify(require('./partials/_clears.css'), mediaQueries),
       display: mqify(require('./partials/_display.css'), mediaQueries),

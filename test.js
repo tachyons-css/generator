@@ -7,7 +7,8 @@ import config from './config.json'
 import tachyonsGenerator from './'
 
 test('nothing explodes', t => {
-  fs.writeFileSync('out.css', JSON.stringify(tachyonsGenerator(config).generate(), null, 2))
+  const tachy = tachyonsGenerator(config)
+  fs.writeFileSync('out.css', tachy.assembleCss(tachy.generate()))
   t.pass()
 })
 
