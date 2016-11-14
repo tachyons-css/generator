@@ -26,7 +26,7 @@ module.exports = config => {
 
   generator.generate = () => {
     return {
-      backgroundColors: colors.bg(),
+//      backgroundColors: colors.bg(),
       backgroundSize: mqify(require('./partials/_background-size.css'), mediaQueries),
       backgroundPosition: mqify(require('./partials/_background-position.css'), mediaQueries),
       borders: mqify(require('./partials/_borders.css'), mediaQueries),
@@ -37,7 +37,7 @@ module.exports = config => {
       boxShadow: mqify(require('./partials/_box-shadow.css'), mediaQueries),
       boxSizing: require('./partials/_box-sizing.css'),
       code: require('./partials/_code.css'),
-      color: colors.text(),
+      color: colors.variables(),
       coordinates: mqify(require('./partials/_coordinates.css'), mediaQueries),
       clears: mqify(require('./partials/_clears.css'), mediaQueries),
       display: mqify(require('./partials/_display.css'), mediaQueries),
@@ -50,7 +50,7 @@ module.exports = config => {
       links: require('./partials/_links.css'),
       lists: require('./partials/_lists.css'),
       heights: mqify(require('./partials/_heights.css'), mediaQueries),
-      hover: colors.hover(),
+      skinsPseudos: colors.hover(),
       images: require('./partials/_images.css'),
       letterSpacing: mqify(require('./partials/_letter-spacing.css'), mediaQueries),
       lineHeight: mqify(require('./partials/_line-height.css'), mediaQueries),
@@ -67,7 +67,6 @@ module.exports = config => {
       verticalAlign: require('./partials/_vertical-align.css'),
       typography: mqify(require('./partials/_typography.css'), mediaQueries),
       utilities: require('./partials/_utilities.css'),
-      variables: colors.variables(),
       visibility: mqify(require('./partials/_visibility.css'), mediaQueries),
       whiteSpace: mqify(require('./partials/_white-space.css'), mediaQueries),
       widths: mqify(require('./partials/_widths.css'), mediaQueries)
