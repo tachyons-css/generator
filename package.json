@@ -11,16 +11,24 @@
     "partials"
   ],
   "scripts": {
-    "test": "ava"
+    "test": "ava -v --timeout=10s"
   },
   "repository": "johnotander/tachyons-generator",
-  "keywords": [],
+  "keywords": [
+    "tachyons",
+    "css",
+    "oocss",
+    "generator"
+  ],
   "license": "MIT",
   "dependencies": {
     "strip-css-comments": "^3.0.0",
     "tachyons": "^4.0.6"
   },
   "devDependencies": {
-    "ava": "*"
+    "ava": "^0.16.0",
+    "camelcase": "^4.0.0",
+    "globby": "^6.1.0",
+    "tachyons": "latest"
   }
 }
