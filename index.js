@@ -67,6 +67,7 @@ module.exports = config => {
       { verticalAlign: require('./partials/_vertical-align.css') },
       { typography: mqify(require('./partials/_typography.css'), mediaQueries) },
       { utilities: require('./partials/_utilities.css') },
+      { variables: colors.variables() },
       { visibility: mqify(require('./partials/_visibility.css'), mediaQueries) },
       { whiteSpace: mqify(require('./partials/_white-space.css'), mediaQueries) },
       { widths: mqify(require('./partials/_widths.css'), mediaQueries) }
