@@ -1,6 +1,7 @@
 'use strict'
 
 const defaultConfig = require('./config.json')
+const assembeCss = require('./lib/assemble-css')
 const typeUtils = require('./lib/type-scale')
 const spacingUtils = require('./lib/spacing')
 const colorUtils = require('./lib/color')
@@ -110,6 +111,8 @@ module.exports = config => {
 
     return _spacing.join('\n')
   }
+
+  generator.assembleCss = assembleCss
 
   function generator () {}
   return generator
