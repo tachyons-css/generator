@@ -1,4 +1,4 @@
-module.exports = `/* TACHYONS v4.4.1 | https://github.com/tachyons-css/tachyons */
+module.exports = `/* TACHYONS (customized) | https://github.com/tachyons-css/tachyons */
 
 /*
  *

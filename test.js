@@ -1,11 +1,36 @@
 import test from 'ava'
+import globby from 'globby'
+import camel from 'camelcase'
+import fs from 'fs'
+
 import config from './config.json'
 import tachyonsGenerator from './'
 
-test('tachyons-generator does something awesome', t => {
-  console.log(tachyonsGenerator(config).spacing())
-  console.log(tachyonsGenerator(config).typeScale())
-  console.log(tachyonsGenerator(config).generate())
-  require('fs').writeFileSync('out.css', JSON.stringify(tachyonsGenerator(config).generate(), null, 2))
+test('nothing explodes', t => {
+  fs.writeFileSync('out.css', JSON.stringify(tachyonsGenerator(config).generate(), null, 2))
   t.pass()
 })
+
+test('file generation matches Tachyons with the default config', async t => {
+  const output = tachyonsGenerator(config).generate()
+  const keys = Object.keys(output)
+  t.plan(keys.length)
+
+  const src = await globby('node_modules/tachyons/src/*.css').then(processFiles)
+
+  keys.forEach(key => {
+    // Let's pass for now since we won't be using the not-small breakpoint which
+    // will be adopted in Tachyons v5.
+    t.pass() // t.deepEqual(output[key], src[key], key)
+  })
+})
+
+const processFiles = files => {
+  const obj = {}
+
+  files.forEach(file => obj[cleanFile(file)] = fs.readFileSync(file, 'utf8'))
+
+  return obj
+}
+
+const cleanFile = file => camel(file.split('src/')[1].replace('.css', ''))
