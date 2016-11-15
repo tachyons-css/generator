@@ -1,4 +1,4 @@
-{
+module.exports = {
   "typeScale": [
     3, 2.25, 1.5, 1.25, 1, 0.875
   ],

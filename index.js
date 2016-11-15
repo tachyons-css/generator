@@ -1,6 +1,6 @@
 'use strict'
 
-const defaultConfig = require('./config.json')
+const defaultConfig = require('./config')
 const assembleCss = require('./lib/assemble-css')
 const typeUtils = require('./lib/type-scale')
 const spacingUtils = require('./lib/spacing')
