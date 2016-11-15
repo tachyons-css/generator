@@ -1,5 +1,6 @@
 import React from 'react'
 
+import isPresent from 'is-present'
 import commaSplit from 'comma-split'
 
 import conf from '../config'
@@ -24,10 +25,27 @@ export default class extends React.Component {
     this.setState({ config: newConfig })
   }
 
+  handleColorRemove (name, val) {
+    const { config } = this.state
+    const { colors } = config
+
+    const newColors = colors.filter(color => {
+      const n = Object.keys(color)[0]
+
+      return n !== name
+    })
+    
+    const newConfig = Object.assign({}, config, { colors: newColors })
+    this.setState({ config: newConfig })
+  }
+
   handleColorAdd (name, val) {
     const { config } = this.state
     const { colors } = config
-    colors[name] = val
+
+    const color = {}
+    color[name] = val
+    colors.push(color)
 
     const newConfig = Object.assign({}, config, { colors })
     this.setState({ config: newConfig })
@@ -60,6 +78,11 @@ export default class extends React.Component {
                   <td className='bb b--near-white pa2'>
                     --{name}: {value};
                   </td>
+                  <td
+                    children='X'
+                    className='bb b--near-white pa2 pointer'
+                    onClick={() => this.handleColorRemove(name)}
+                  />
                 </tr>
               )
             })}
