@@ -1,0 +1,12 @@
+{
+  "name": "app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^1.1.1"
+  }
+}
