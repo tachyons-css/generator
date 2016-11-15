@@ -2,7 +2,7 @@
   "name": "tachyons-generator",
   "description": "Generate a custom Tachyons build with a json configuration",
   "author": "John Otander",
-  "version": "0.1.0-beta.7",
+  "version": "0.1.0-beta.8",
   "main": "index.js",
   "files": [
     "index.js",
