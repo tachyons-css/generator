@@ -10,6 +10,6 @@
     "comma-split": "^1.0.0",
     "json-loader": "^0.5.4",
     "next": "^1.1.1",
-    "tachyons-generator": "0.1.0-beta.5"
+    "tachyons-generator": "0.1.0-beta.6"
   }
 }

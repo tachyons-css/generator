@@ -28,7 +28,7 @@ export default class extends React.Component {
     const { config, currTypeScale } = this.state
 
     return (
-      <Layout>
+      <Layout config={config}>
         <h3 className='f6 ttu fw6 mb0 mt5 bb pb2'>Typography</h3>
         {config.typeScale.map((f, i) => (
           <div>

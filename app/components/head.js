@@ -3,13 +3,18 @@ import Head from 'next/head'
 
 import generator from 'tachyons-generator'
 
-export default config => (
-  <Head>
-    <title>Tachyons Generator</title>
+export default config => {
+  console.log(config)
+  const gen = generator(config)
 
-    <meta charSet='utf-8' />
-    <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+  return (
+    <Head>
+      <title>Tachyons Generator</title>
 
-    <style children={generator.assembleCss(generator(config).generate())} />
-  </Head>
-)
+      <meta charSet='utf-8' />
+      <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+
+      <style children={`${gen.assembleCss(gen.generate())} ${gen.typeScale()}`} />
+    </Head>
+  )
+}

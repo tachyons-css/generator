@@ -1,9 +1,9 @@
 import React from 'react'
 import Head from './head'
 
-export default ({ children }) => (
+export default ({ config, children }) => (
   <div>
-    <Head />
+    <Head config={config} />
     {children}
   </div>
 )

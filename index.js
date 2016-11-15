@@ -8,7 +8,7 @@ const colorUtils = require('./lib/color')
 const mqify = require('./lib/mqify')
 
 module.exports = config => {
-  const _config = Object.assign({}, defaultConfig, config || {})
+  const _config = Object.assign({}, config || {}, defaultConfig)
   const colors = colorUtils(_config.colors)
 
   const mediaQueries = _config.customMedia.map((breakpoint, i) => {
