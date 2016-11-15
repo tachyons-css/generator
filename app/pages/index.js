@@ -11,9 +11,9 @@ import Layout from '../components/layout'
 export default class extends React.Component {
   constructor () {
     super()
-
-    this.state = { config }
-    this.handleTypeScale = this.handleTypeScale.bind(this)
+    this.state = {
+      config
+    }
   }
 
   handleTypeScale (e, i) {
@@ -60,8 +60,11 @@ export default class extends React.Component {
         <h3 className='f6 ttu fw6 mb0 bb pb2'>Typography</h3>
         {config.typeScale.map((f, i) => (
           <div key={i}>
-            <p className={`f${i + 1}`}>Heading {i + 1}</p>
-            <input value={config.typeScale[i]} onChange={e => this.handleTypeScale(e, i)} />
+            <h4 className={`f${i + 1}`}>Heading {i + 1}</h4>
+            <input
+              value={config.typeScale[i]}
+              onChange={e => this.handleTypeScale(e, i)}
+            />
           </div>
         ))}
         <h3 className='f6 ttu fw6 mb0 mt5 bb pb2 mb1'>Colors</h3>
