@@ -25,7 +25,7 @@ export default class extends React.Component {
   }
 
   render () {
-    const { config, currTypeScale } = this.state
+    const { config } = this.state
 
     return (
       <Layout config={config}>
