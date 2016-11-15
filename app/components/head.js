@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-import generator from '../index'
+import generator from 'tachyons-generator'
 
 export default config => (
   <Head>
