@@ -27,7 +27,6 @@ module.exports = config => {
 
   generator.generate = () => {
     return {
-//      backgroundColors: colors.bg(),
       backgroundSize: mqify(require('./partials/_background-size.css'), mediaQueries),
       backgroundPosition: mqify(require('./partials/_background-position.css'), mediaQueries),
       borders: mqify(require('./partials/_borders.css'), mediaQueries),
@@ -51,6 +50,7 @@ module.exports = config => {
       links: require('./partials/_links.css'),
       lists: require('./partials/_lists.css'),
       heights: mqify(require('./partials/_heights.css'), mediaQueries),
+      skins: colors.skins(),
       skinsPseudos: colors.hover(),
       images: require('./partials/_images.css'),
       letterSpacing: mqify(require('./partials/_letter-spacing.css'), mediaQueries),
