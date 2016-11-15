@@ -11,7 +11,7 @@ export default class extends React.Component {
   constructor () {
     super()
 
-    this.state = { config, currTypeScale: config.typeScale.join(', ') }
+    this.state = { config }
     this.handleTypeScale = this.handleTypeScale.bind(this)
   }
 
@@ -32,7 +32,7 @@ export default class extends React.Component {
         <h3 className='f6 ttu fw6 mb0 mt5 bb pb2'>Typography</h3>
         {config.typeScale.map((f, i) => (
           <div>
-            <p style={{fontSize: f * 16}}>Heading {i + 1}</p>
+            <p className={`f${i + 1}`}>Heading {i + 1}</p>
             <input value={config.typeScale[i]} onChange={e => this.handleTypeScale(e, i)} />
           </div>
         ))}
