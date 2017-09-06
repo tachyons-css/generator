@@ -5,25 +5,14 @@ const assembleCss = require('./lib/assemble-css')
 const typeUtils = require('./lib/type-scale')
 const spacingUtils = require('./lib/spacing')
 const colorUtils = require('./lib/color')
+const extractMediaQueries = require('./lib/media-queries')
 const mqify = require('./lib/mqify')
 
 module.exports = config => {
   const _config = Object.assign({}, defaultConfig, config)
   const colors = colorUtils(_config.colors)
 
-  const mediaQueries = _config.customMedia.map((breakpoint, i) => {
-    const nextBreakpoint = _config.customMedia[i+1]
-    const key = Object.keys(breakpoint)[0]
-    const val = breakpoint[key]
-
-    if (nextBreakpoint) {
-      const nbpVal = nextBreakpoint[Object.keys(nextBreakpoint)[0]]
-
-      return [key, `screen and (min-width: ${val}) and (max-width: ${nbpVal})`]
-    } else {
-      return [key, `screen and (min-width: ${val})`]
-    }
-  })
+  const mediaQueries = extractMediaQueries(_config)
 
   generator.typeScale = () => {
     const _typeScale = []
