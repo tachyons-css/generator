@@ -1,4 +1,4 @@
-{
+export default () => ({
   "typeScale": [
     3, 2.25, 1.5, 1.25, 1, 0.875
   ],
@@ -47,4 +47,4 @@
     { "light-yellow": "#f3dd70" },
     { "light-red": "#ffd3c0" }
   ]
-}
+})

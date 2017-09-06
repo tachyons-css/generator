@@ -3,7 +3,7 @@ import globby from 'globby'
 import camel from 'camelcase'
 import fs from 'fs'
 
-import config from './config.json'
+import config from './config'
 import tachyonsGenerator from './'
 
 test('nothing explodes', t => {
