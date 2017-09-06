@@ -30,6 +30,7 @@ module.exports = `/* TACHYONS (customized) | https://github.com/tachyons-css/tac
 
 /* Modules */
 @import './_box-sizing';
+@import './_aspect-ratios';
 @import './_images';
 @import './_background-size';
 @import './_background-position';
@@ -58,11 +59,13 @@ module.exports = `/* TACHYONS (customized) | https://github.com/tachyons-css/tac
 @import './_max-widths';
 @import './_widths';
 @import './_overflow';
+@import './_rotations';
 @import './_position';
 @import './_opacity';
 @import './_skins';
 @import './_skins-pseudo';
 @import './_spacing';
+@import './_negative-margins';
 @import './_tables';
 @import './_text-decoration';
 @import './_text-align';
