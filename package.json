@@ -22,6 +22,9 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "perfectionist": "^2.4.0",
+    "postcss": "^6.0.11",
+    "postcss-class-postfix": "^1.0.0",
     "strip-css-comments": "^3.0.0"
   },
   "devDependencies": {

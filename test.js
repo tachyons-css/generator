@@ -12,6 +12,15 @@ test('nothing explodes', t => {
   t.pass()
 })
 
+test('media-queries are handled correctly', async t => {
+  const tachy = tachyonsGenerator(config)
+  const { display } = await tachy.generate()
+
+  const EXPECTED = fixture('display.css')
+
+  t.is(display.trim(), EXPECTED)
+})
+
 test('file generation matches Tachyons with the default config', async t => {
   const output = tachyonsGenerator(config).generate()
   const keys = Object.keys(output)
@@ -35,3 +44,4 @@ const processFiles = files => {
 }
 
 const cleanFile = file => camel(file.split('src/')[1].replace('.css', ''))
+const fixture = file => fs.readFileSync(`test/fixtures/${file}`, 'utf8').trim()
