@@ -22,8 +22,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "strip-css-comments": "^3.0.0",
-    "tachyons": "^4.0.6"
+    "strip-css-comments": "^3.0.0"
   },
   "devDependencies": {
     "ava": "^0.16.0",
