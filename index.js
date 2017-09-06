@@ -1,6 +1,7 @@
 'use strict'
 
-const defaultConfig = require('./config')
+const DEFAULT_CONFIG = require('./config')
+
 const assembleCss = require('./lib/assemble-css')
 const typeUtils = require('./lib/type-scale')
 const spacingUtils = require('./lib/spacing')
@@ -9,9 +10,9 @@ const extractMediaQueries = require('./lib/media-queries')
 const mqify = require('./lib/mqify')
 
 module.exports = config => {
-  const _config = Object.assign({}, defaultConfig, config)
-  const colors = colorUtils(_config.colors)
+  const _config = Object.assign({}, DEFAULT_CONFIG, config)
 
+  const colors = colorUtils(_config.colors)
   const mediaQueries = extractMediaQueries(_config)
 
   generator.typeScale = () => {
@@ -52,59 +53,57 @@ module.exports = config => {
     return _spacing.join('\n')
   }
 
-  generator.generate = () => {
-    return {
-      aspectRatios: mqify(require('./partials/_aspect-ratios.css'), mediaQueries),
-      backgroundColors: colors.bg(),
-      backgroundSize: mqify(require('./partials/_background-size.css'), mediaQueries),
-      backgroundPosition: mqify(require('./partials/_background-position.css'), mediaQueries),
-      borders: mqify(require('./partials/_borders.css'), mediaQueries),
-      borderColor: colors.border(),
-      borderRadius: mqify(require('./partials/_border-radius.css'), mediaQueries),
-      borderStyle: mqify(require('./partials/_border-style.css'), mediaQueries),
-      borderWidths: mqify(require('./partials/_border-widths.css'), mediaQueries),
-      boxShadow: mqify(require('./partials/_box-shadow.css'), mediaQueries),
-      boxSizing: require('./partials/_box-sizing.css'),
-      code: require('./partials/_code.css'),
-      colors: colors.variables(),
-      spacing: generator.spacing(),
-      coordinates: mqify(require('./partials/_coordinates.css'), mediaQueries),
-      clears: mqify(require('./partials/_clears.css'), mediaQueries),
-      display: mqify(require('./partials/_display.css'), mediaQueries),
-      flexbox: mqify(require('./partials/_flexbox.css'), mediaQueries),
-      floats: mqify(require('./partials/_floats.css'), mediaQueries),
-      fontFamily: require('./partials/_font-family.css'),
-      fontStyle: mqify(require('./partials/_font-style.css'), mediaQueries),
-      fontWeight: mqify(require('./partials/_font-weight.css'), mediaQueries),
-      forms: require('./partials/_forms.css'),
-      links: require('./partials/_links.css'),
-      lists: require('./partials/_lists.css'),
-      heights: mqify(require('./partials/_heights.css'), mediaQueries),
-      skins: colors.skins(),
-      skinsPseudos: colors.hover(),
-      images: require('./partials/_images.css'),
-      letterSpacing: mqify(require('./partials/_letter-spacing.css'), mediaQueries),
-      lineHeight: mqify(require('./partials/_line-height.css'), mediaQueries),
-      maxWidths: mqify(require('./partials/_max-widths.css'), mediaQueries),
-      normalize: require('./partials/_normalize.css'),
-      opacity: mqify(require('./partials/_opacity.css'), mediaQueries),
-      rotations: mqify(require('./partials/_rotations.css'), mediaQueries),
-      outlines: mqify(require('./partials/_outlines.css'), mediaQueries),
-      overflow: mqify(require('./partials/_overflow.css'), mediaQueries),
-      position: mqify(require('./partials/_position.css'), mediaQueries),
-      tables: require('./partials/_tables.css'),
-      textDecoration: mqify(require('./partials/_text-decoration.css'), mediaQueries),
-      textAlign: mqify(require('./partials/_text-align.css'), mediaQueries),
-      textTransform: mqify(require('./partials/_text-transform.css'), mediaQueries),
-      verticalAlign: require('./partials/_vertical-align.css'),
-      typeScale: generator.typeScale(),
-      typography: mqify(require('./partials/_typography.css'), mediaQueries),
-      utilities: require('./partials/_utilities.css'),
-      visibility: mqify(require('./partials/_visibility.css'), mediaQueries),
-      whiteSpace: mqify(require('./partials/_white-space.css'), mediaQueries),
-      widths: mqify(require('./partials/_widths.css'), mediaQueries)
-    }
-  }
+  generator.generate = async () => ({
+    aspectRatios: await mqify(require('./partials/_aspect-ratios.css'), mediaQueries),
+    backgroundColors: colors.bg(),
+    backgroundSize: await mqify(require('./partials/_background-size.css'), mediaQueries),
+    backgroundPosition: await mqify(require('./partials/_background-position.css'), mediaQueries),
+    borders: await mqify(require('./partials/_borders.css'), mediaQueries),
+    borderColor: colors.border(),
+    borderRadius: await mqify(require('./partials/_border-radius.css'), mediaQueries),
+    borderStyle: await mqify(require('./partials/_border-style.css'), mediaQueries),
+    borderWidths: await mqify(require('./partials/_border-widths.css'), mediaQueries),
+    boxShadow: await mqify(require('./partials/_box-shadow.css'), mediaQueries),
+    boxSizing: require('./partials/_box-sizing.css'),
+    code: require('./partials/_code.css'),
+    colors: colors.variables(),
+    spacing: generator.spacing(),
+    coordinates: await mqify(require('./partials/_coordinates.css'), mediaQueries),
+    clears: await mqify(require('./partials/_clears.css'), mediaQueries),
+    display: await mqify(require('./partials/_display.css'), mediaQueries),
+    flexbox: await mqify(require('./partials/_flexbox.css'), mediaQueries),
+    floats: await mqify(require('./partials/_floats.css'), mediaQueries),
+    fontFamily: require('./partials/_font-family.css'),
+    fontStyle: await mqify(require('./partials/_font-style.css'), mediaQueries),
+    fontWeight: await mqify(require('./partials/_font-weight.css'), mediaQueries),
+    forms: require('./partials/_forms.css'),
+    links: require('./partials/_links.css'),
+    lists: require('./partials/_lists.css'),
+    heights: await mqify(require('./partials/_heights.css'), mediaQueries),
+    skins: colors.skins(),
+    skinsPseudos: colors.hover(),
+    images: require('./partials/_images.css'),
+    letterSpacing: await mqify(require('./partials/_letter-spacing.css'), mediaQueries),
+    lineHeight: await mqify(require('./partials/_line-height.css'), mediaQueries),
+    maxWidths: await mqify(require('./partials/_max-widths.css'), mediaQueries),
+    normalize: require('./partials/_normalize.css'),
+    opacity: await mqify(require('./partials/_opacity.css'), mediaQueries),
+    rotations: await mqify(require('./partials/_rotations.css'), mediaQueries),
+    outlines: await mqify(require('./partials/_outlines.css'), mediaQueries),
+    overflow: await mqify(require('./partials/_overflow.css'), mediaQueries),
+    position: await mqify(require('./partials/_position.css'), mediaQueries),
+    tables: require('./partials/_tables.css'),
+    textDecoration: await mqify(require('./partials/_text-decoration.css'), mediaQueries),
+    textAlign: await mqify(require('./partials/_text-align.css'), mediaQueries),
+    textTransform: await mqify(require('./partials/_text-transform.css'), mediaQueries),
+    verticalAlign: require('./partials/_vertical-align.css'),
+    typeScale: generator.typeScale(),
+    typography: await mqify(require('./partials/_typography.css'), mediaQueries),
+    utilities: require('./partials/_utilities.css'),
+    visibility: await mqify(require('./partials/_visibility.css'), mediaQueries),
+    whiteSpace: await mqify(require('./partials/_white-space.css'), mediaQueries),
+    widths: await mqify(require('./partials/_widths.css'), mediaQueries)
+  })
 
   generator.assembleCss = assembleCss
 

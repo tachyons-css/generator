@@ -18,7 +18,6 @@ module.exports = `/*
     tcolg = table-column-group
 
    Media Query Extensions:
-     -ns = not-small
      -m  = medium
      -l  = large
 
