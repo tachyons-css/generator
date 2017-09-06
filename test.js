@@ -6,9 +6,9 @@ import fs from 'fs'
 import config from './config'
 import tachyonsGenerator from './'
 
-test('nothing explodes', t => {
+test('nothing explodes', async t => {
   const tachy = tachyonsGenerator(config)
-  fs.writeFileSync('out.css', tachy.assembleCss(tachy.generate()))
+  fs.writeFileSync('out.css', tachy.assembleCss(await tachy.generate()))
   t.pass()
 })
 
@@ -22,7 +22,7 @@ test('media-queries are handled correctly', async t => {
 })
 
 test('file generation matches Tachyons with the default config', async t => {
-  const output = tachyonsGenerator(config).generate()
+  const output = await tachyonsGenerator(config).generate()
   const keys = Object.keys(output)
   t.plan(keys.length)
 
