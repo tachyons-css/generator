@@ -1,0 +1,19 @@
+{
+  "name": "tachyons-publish-api",
+  "description": "Microservice to get a temporary token to write to a subdir of the tachyons bucket",
+  "scripts": {
+    "start": "micro"
+  },
+  "repository": "tachyons/generate/api",
+  "dependencies": {
+    "aws-sdk": "^2.6.10",
+    "micro": "^6.1.0"
+  },
+  "now": {
+    "alias": "publish.tachyons.pub",
+    "env": {
+      "AWS_ACCESS_KEY_ID": "@tachyons-aws-access-key-id",
+      "AWS_SECRET_ACCESS_KEY": "@tachyons-aws-secret-access-key"
+    }
+  }
+}
