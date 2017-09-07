@@ -24,6 +24,13 @@ test('type-scale', async t => {
   t.is(typeScale.trim(), EXPECTED)
 })
 
+test('module skipping', async t => {
+  const tachy = tachyonsGenerator({ skipModules: ['aspect-ratios'] })
+  const { aspectRatios } = await tachy.generate()
+
+  t.is(aspectRatios, undefined)
+})
+
 test('file generation matches Tachyons with the default config', async t => {
   const output = await tachyonsGenerator(config).generate()
   const keys = Object.keys(output)
