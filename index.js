@@ -3,7 +3,7 @@
 const DEFAULT_CONFIG = require('./config')
 
 const assembleCss = require('./lib/assemble-css')
-const typeUtils = require('./lib/type-scale')
+const typeScale = require('./lib/type-scale')
 const spacingUtils = require('./lib/spacing')
 const colorUtils = require('./lib/color')
 const extractMediaQueries = require('./lib/media-queries')
@@ -14,26 +14,6 @@ module.exports = config => {
 
   const colors = colorUtils(_config.colors)
   const mediaQueries = extractMediaQueries(_config)
-
-  generator.typeScale = () => {
-    const _typeScale = []
-
-    for (let i = 0; i < _config.typeScale.length; i++) {
-      _typeScale.push(typeUtils(i + 1, _config.typeScale[i]))
-    }
-
-    mediaQueries.forEach(mq => {
-      _typeScale.push(`@media ${mq[1]} {`)
-
-      for (let i = 0; i < _config.typeScale.length; i++) {
-        _typeScale.push(typeUtils(i + 1, _config.typeScale[i], { postfix: '-' + mq[0] }))
-      }
-
-      _typeScale.push('}')
-    })
-
-    return _typeScale.join('\n')
-  }
 
   generator.spacing = () => {
     const _spacing = []
@@ -97,7 +77,7 @@ module.exports = config => {
     textAlign: await mqify(require('./partials/_text-align.css'), mediaQueries),
     textTransform: await mqify(require('./partials/_text-transform.css'), mediaQueries),
     verticalAlign: require('./partials/_vertical-align.css'),
-    typeScale: generator.typeScale(),
+    typeScale: await mqify(typeScale(config.typeScale), mediaQueries),
     typography: await mqify(require('./partials/_typography.css'), mediaQueries),
     utilities: require('./partials/_utilities.css'),
     visibility: await mqify(require('./partials/_visibility.css'), mediaQueries),
