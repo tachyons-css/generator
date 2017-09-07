@@ -1,4 +1,4 @@
-const { version } = require('./package')
+const { version } = require('./package.json')
 
 const crypto = require('crypto')
 const AWS = require('aws-sdk')
@@ -20,8 +20,9 @@ module.exports = async (req, res) => {
     const config = await json(req)
     const hash = hashConfig(config)
     const token = await getToken(hash)
+    const object = `${version}/${hash}`
 
-    send(res, 200, { hash, token })
+    send(res, 200, { hash, token, object })
   } catch (error) {
     send(res, 500, { error })
   }

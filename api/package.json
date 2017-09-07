@@ -1,5 +1,6 @@
 {
   "name": "tachyons-publish-api",
+  "version": "0.0.1",
   "description": "Microservice to get a temporary token to write to a subdir of the tachyons bucket",
   "scripts": {
     "start": "micro"
