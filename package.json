@@ -22,6 +22,8 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "is-blank": "^2.1.0",
+    "kebab-case": "^1.0.0",
     "perfectionist": "^2.4.0",
     "postcss": "^6.0.11",
     "postcss-class-postfix": "^1.0.0",

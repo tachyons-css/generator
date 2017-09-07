@@ -15,7 +15,10 @@ npm i -S tachyons-generator
 const tachyonsGenerator = require('tachyons-generator')
 const config = require('./config.json')
 
-console.log(tachyonsGenerator(config)) // => { ... }
+const tachy = tachyonsGenerator(config)
+
+const modules = await tachy.generate()
+const css = await tachy.css()
 ```
 
 #### Example config
