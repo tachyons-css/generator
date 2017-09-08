@@ -1,22 +1,4 @@
-module.exports = `/*
-
-   ASPECT RATIOS
-
-*/
-
-/* This is for fluid media that is embedded from third party sites like youtube, vimeo etc.
- * Wrap the outer element in aspect-ratio and then extend it with the desired ratio i.e
- * Make sure there are no height and width attributes on the embedded media.
- * Adapted from: https://github.com/suitcss/components-flex-embed
- *
- * Example:
- *
- * <div class="aspect-ratio aspect-ratio--16x9">
- *  <iframe class="aspect-ratio--object"></iframe>
- * </div>
- *
- * */
-
+module.exports = `
 .aspect-ratio {
   height: 0;
   position: relative;
@@ -40,12 +22,13 @@ module.exports = `/*
 .aspect-ratio--1x1 {  padding-bottom: 100%; }
 
 .aspect-ratio--object {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 100;
-}`
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+`

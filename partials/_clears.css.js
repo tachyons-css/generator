@@ -1,13 +1,4 @@
-module.exports = `/*
-
-   CLEARFIX
-   http://tachyons.io/docs/layout/clearfix/
-
-*/
-
-/* Nicolas Gallaghers Clearfix solution
-   Ref: http://nicolasgallagher.com/micro-clearfix-hack/ */
-
+module.exports = `
 .cf:before,
 .cf:after { content: " "; display: table; }
 .cf:after { clear: both; }
@@ -16,4 +7,5 @@ module.exports = `/*
 .cl { clear: left; }
 .cr { clear: right; }
 .cb { clear: both; }
-.cn { clear: none; }`
+.cn { clear: none; }
+`

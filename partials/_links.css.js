@@ -1,10 +1,4 @@
-module.exports = `/*
-
-   LINKS
-   Docs: http://tachyons.io/docs/elements/links/
-
-*/
-
+module.exports = `
 .link {
   text-decoration: none;
   transition: color .15s ease-in;
@@ -23,4 +17,5 @@ module.exports = `/*
 .link:focus   {
   transition: color .15s ease-in;
   outline: 1px dotted currentColor;
-}`
+}
+`

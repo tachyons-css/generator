@@ -1,8 +1,13 @@
-module.exports = `/*
+module.exports = `
+@media (--breakpoint-not-small) {
 
-  MODULE NAME
+}
 
-  Use this scaffolding to create or extend your own modules with tachyons
-  style architecture.
+@media (--breakpoint-medium) {
 
-*/`
+}
+
+@media (--breakpoint-large) {
+
+}
+`

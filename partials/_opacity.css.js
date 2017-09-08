@@ -1,10 +1,4 @@
-module.exports = `/*
-
-    OPACITY
-    Docs: http://tachyons.io/docs/themes/opacity/
-
-*/
-
+module.exports = `
 .o-100 { opacity: 1;    }
 .o-90  { opacity: .9;   }
 .o-80  { opacity: .8;   }
@@ -17,4 +11,5 @@ module.exports = `/*
 .o-10  { opacity: .1;   }
 .o-05  { opacity: .05;  }
 .o-025 { opacity: .025; }
-.o-0   { opacity: 0; }`
+.o-0   { opacity: 0; }
+`

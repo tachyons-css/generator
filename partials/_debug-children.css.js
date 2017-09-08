@@ -1,11 +1,5 @@
-module.exports = `/*
-
-  DEBUG CHILDREN
-  Docs: http://tachyons.io/docs/debug/
-
-  Just add the debug class to any element to see outlines on its
-  children.
-
-*/
-
-.debug * { outline: 1px solid gold; }`
+module.exports = `
+.debug * { outline: 1px solid gold; }
+.debug-white * { outline: 1px solid white; }
+.debug-black * { outline: 1px solid black; }
+`

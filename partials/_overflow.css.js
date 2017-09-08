@@ -1,14 +1,4 @@
-module.exports = `/*
-
-    OVERFLOW
-
-    Media Query Extensions:
-      -ns = not-small
-      -m  = medium
-      -l  = large
-
- */
-
+module.exports = `
 .overflow-visible { overflow: visible; }
 .overflow-hidden { overflow: hidden; }
 .overflow-scroll { overflow: scroll; }
@@ -22,4 +12,5 @@ module.exports = `/*
 .overflow-y-visible { overflow-y: visible; }
 .overflow-y-hidden { overflow-y: hidden; }
 .overflow-y-scroll { overflow-y: scroll; }
-.overflow-y-auto { overflow-y: auto; }`
+.overflow-y-auto { overflow-y: auto; }
+`

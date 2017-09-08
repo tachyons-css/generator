@@ -1,45 +1,11 @@
-module.exports = `/*
-
-   HEIGHTS
-   Docs: http://tachyons.io/docs/layout/heights/
-
-   Base:
-     h = height
-     min-h = min-height
-     min-vh = min-height vertical screen height
-     vh = vertical screen height
-
-   Modifiers
-     1 = 1st step in height scale
-     2 = 2nd step in height scale
-     3 = 3rd step in height scale
-     4 = 4th step in height scale
-     5 = 5th step in height scale
-
-     -25   = literal value 25%
-     -50   = literal value 50%
-     -75   = literal value 75%
-     -100  = literal value 100%
-
-     -auto = string value of auto
-     -inherit = string value of inherit
-
-   Media Query Extensions:
-     -ns = not-small
-     -m  = medium
-     -l  = large
-
-*/
-
-/* Height Scale */
-
+module.exports = `
 .h1 { height: 1rem; }
 .h2 { height: 2rem; }
 .h3 { height: 4rem; }
 .h4 { height: 8rem; }
 .h5 { height: 16rem; }
 
-/* Height Percentages - Based off of height of parent */
+
 
 .h-25 {  height:  25%; }
 .h-50 {  height:  50%; }
@@ -48,7 +14,7 @@ module.exports = `/*
 
 .min-h-100 { min-height: 100%; }
 
-/* Screen Height Percentage */
+
 
 .vh-25 {  height:  25vh; }
 .vh-50 {  height:  50vh; }
@@ -58,7 +24,8 @@ module.exports = `/*
 .min-vh-100 { min-height: 100vh; }
 
 
-/* String Properties */
+
 
 .h-auto {     height: auto; }
-.h-inherit {  height: inherit; }`
+.h-inherit {  height: inherit; }
+`

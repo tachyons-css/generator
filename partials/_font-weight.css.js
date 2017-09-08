@@ -1,29 +1,4 @@
-module.exports = `/*
-
-   FONT WEIGHT
-   Docs: http://tachyons.io/docs/typography/font-weight/
-
-   Base
-     fw = font-weight
-
-   Modifiers:
-     1 = literal value 100
-     2 = literal value 200
-     3 = literal value 300
-     4 = literal value 400
-     5 = literal value 500
-     6 = literal value 600
-     7 = literal value 700
-     8 = literal value 800
-     9 = literal value 900
-
-   Media Query Extensions:
-     -ns = not-small
-     -m  = medium
-     -l  = large
-
-*/
-
+module.exports = `
 .normal { font-weight: normal; }
 .b      { font-weight: bold; }
 .fw1    { font-weight: 100; }
@@ -34,4 +9,5 @@ module.exports = `/*
 .fw6    { font-weight: 600; }
 .fw7    { font-weight: 700; }
 .fw8    { font-weight: 800; }
-.fw9    { font-weight: 900; }`
+.fw9    { font-weight: 900; }
+`

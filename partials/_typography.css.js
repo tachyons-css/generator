@@ -1,33 +1,19 @@
-module.exports = `/*
-
-   TYPOGRAPHY
-   http://tachyons.io/docs/typography/measure/
-
-   Media Query Extensions:
-     -ns = not-small
-     -m  = medium
-     -l  = large
-
-*/
-
-
-
-/* Measure is limited to ~66 characters */
+module.exports = `
 .measure {
   max-width: 30em;
 }
 
-/* Measure is limited to ~80 characters */
+
 .measure-wide {
   max-width: 34em;
 }
 
-/* Measure is limited to ~45 characters */
+
 .measure-narrow {
   max-width: 20em;
 }
 
-/* Book paragraph style - paragraphs are indented with no vertical spacing. */
+
 .indent {
   text-indent: 1em;
   margin-top: 0;
@@ -38,10 +24,11 @@ module.exports = `/*
   font-variant: small-caps;
 }
 
-/* Combine this class with a width to truncate text (or just leave as is to truncate at width of containing element. */
+
 
 .truncate {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}`
+}
+`

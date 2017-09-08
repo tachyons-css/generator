@@ -1,22 +1,4 @@
-module.exports = `/*
-
-  HOVER EFFECTS
-  Docs: http://tachyons.io/docs/themes/hovers/
-
-    - Dim
-    - Hide Child
-    - Underline text
-    - Grow
-    - Pointer
-    - Shadow
-
-*/
-
-/*
-
-  Dim element on hover by adding the dim class.
-
-*/
+module.exports = `
 .dim {
   opacity: 1;
   transition: opacity .15s ease-in;
@@ -30,20 +12,17 @@ module.exports = `/*
   opacity: .8; transition: opacity .15s ease-out;
 }
 
-/*
 
-  Hide child & reveal on hover:
+.glow {
+  transition: opacity .15s ease-in;
+}
+.glow:hover,
+.glow:focus {
+  opacity: 1;
+  transition: opacity .15s ease-in;
+}
 
-  Put the hide-child class on a parent element and any nested element with the
-  child class will be hidden and displayed on hover or focus.
 
-  <div class="hide-child">
-    <div class="child"> Hidden until hover or focus </div>
-    <div class="child"> Hidden until hover or focus </div>
-    <div class="child"> Hidden until hover or focus </div>
-    <div class="child"> Hidden until hover or focus </div>
-  </div>
-*/
 
 .hide-child .child {
   opacity: 0;
@@ -61,8 +40,7 @@ module.exports = `/*
   text-decoration: underline;
 }
 
-/* Can combine this with overflow-hidden to make background images grow on hover
- * even if you are using background-size: cover */
+
 
 .grow {
   -moz-osx-font-smoothing: grayscale;
@@ -84,7 +62,7 @@ module.exports = `/*
   -moz-osx-font-smoothing: grayscale;
   backface-visibility: hidden;
   transform: translateZ(0);
-  transition: transform 0.25s ease-in-out;
+  transition: transform .25s ease-in-out;
 }
 
 .grow-large:hover,
@@ -96,26 +74,44 @@ module.exports = `/*
   transform: scale(.95);
 }
 
-/* Add pointer on hover */
+
 
 .pointer:hover {
   cursor: pointer;
 }
 
-/* 
-   Add shadow on hover.
 
-   Performant box-shadow animation pattern from 
-   http://tobiasahlin.com/blog/how-to-animate-box-shadow/ 
-*/
+
+.shadow-hover {
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
 .shadow-hover::after {
-  box-shadow: 0px 0px 8px 2px rgba( 0, 0, 0, 0.2 );
+  content: '';
+  box-shadow: 0px 0px 16px 2px rgba( 0, 0, 0, .2 );
+  border-radius: inherit;
   opacity: 0;
-  transition: opacity 0.25s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .shadow-hover:hover::after,
 .shadow-hover:focus::after {
   opacity: 1;
-}`
+}
+
+
+
+.bg-animate,
+.bg-animate:hover,
+.bg-animate:focus {
+  transition: background-color .15s ease-in-out; 
+}
+`
