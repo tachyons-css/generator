@@ -21,7 +21,11 @@ module.exports = config => {
     const min = await buildCss(post, { minified: true })
     const css = await buildCss(post)
 
-    return { post, css, min }
+    return {
+      post: post,
+      css: css.css,
+      min: min.css
+    }
   }
 
   function generator () {}

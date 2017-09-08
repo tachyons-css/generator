@@ -6,36 +6,11 @@ import fs from 'fs'
 import config from './config'
 import tachyonsGenerator from './'
 
-test('media-queries are handled correctly', async t => {
-  const tachy = tachyonsGenerator(config)
-  const { display } = await tachy.generate()
-
-  const EXPECTED = fixture('display.css')
-
-  t.is(display.trim(), EXPECTED)
-})
-
-test('type-scale', async t => {
-  const tachy = tachyonsGenerator(config)
-  const { typeScale } = await tachy.generate()
-
-  const EXPECTED = fixture('type-scale.css')
-
-  t.is(typeScale.trim(), EXPECTED)
-})
-
-test('module skipping', async t => {
-  const tachy = tachyonsGenerator({ skipModules: ['aspect-ratios'] })
-  const { aspectRatios } = await tachy.generate()
-
-  t.is(aspectRatios, undefined)
-})
 
 test('css', async t => {
   const tachy = tachyonsGenerator(config)
 
   const { post, css, min } = await tachy.css()
-
 
   fs.writeFileSync('out.css', post)
 
