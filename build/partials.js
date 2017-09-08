@@ -13,7 +13,8 @@ const IGNORED = {
   skins: true,
   skinsPseudo: true,
   spacing: true,
-  negativeMargins: true
+  negativeMargins: true,
+  borderWidths: true
 }
 
 const fileToModule = file => camel(file.split('src/_')[1].replace('.css', ''))
