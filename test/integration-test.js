@@ -3,8 +3,8 @@ import globby from 'globby'
 import camel from 'camelcase'
 import fs from 'fs'
 
-import config from './config'
-import tachyonsGenerator from './'
+import config from '../config'
+import tachyonsGenerator from '../'
 
 test('media-queries are handled correctly', async t => {
   const tachy = tachyonsGenerator(config)
@@ -64,4 +64,4 @@ const processFiles = files => {
 }
 
 const cleanFile = file => camel(file.split('src/')[1].replace('.css', ''))
-const fixture = file => fs.readFileSync(`test/fixtures/${file}`, 'utf8').trim()
+const fixture = file => fs.readFileSync(`fixtures/${file}`, 'utf8').trim()
