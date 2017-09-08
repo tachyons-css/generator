@@ -1,4 +1,4 @@
-# tachyons-generator [![Build Status](https://secure.travis-ci.org/johnotander/tachyons-generator.svg?branch=master)](https://travis-ci.org/johnotander/tachyons-generator) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+# tachyons-generator [![Build Status](https://secure.travis-ci.org/tachyons-css/tachyons-generator.svg?branch=master)](https://travis-ci.org/tachyons-css/tachyons-generator) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 This repo is currently under active development.
 It isn't currently ready for production, but we hope to have a beta out soon.
