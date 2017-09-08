@@ -3,7 +3,7 @@
 This repo is currently under active development.
 It isn't currently ready for production, but we hope to have a beta out soon.
 Pull requests and issues welcome!
-If you'd like to lend a hand put don't know where to start please ping @johnotander :heart:.
+If you'd like to lend a hand but don't know where to start please ping @johnotander :heart:.
 
 Generate a custom Tachyons build with a json configuration.
 Inspiration from [this tachyons issue](https://github.com/tachyons-css/tachyons/issues/224).
