@@ -31,6 +31,16 @@ test('module skipping', async t => {
   t.is(aspectRatios, undefined)
 })
 
+test('css', async t => {
+  const tachy = tachyonsGenerator(config)
+
+  const { post, css, min } = await tachy.css()
+
+  fs.writeFileSync('out.css', css)
+
+  t.pass()
+})
+
 test('file generation matches Tachyons with the default config', async t => {
   const output = await tachyonsGenerator(config).generate()
   const keys = Object.keys(output)

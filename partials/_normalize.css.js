@@ -1,4 +1,4 @@
-module.exports = `/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+module.exports = `/* normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 
 /**
  * 1. Change the default font family in all browsers (opinionated).

@@ -1,6 +1,7 @@
 'use strict'
 
 const camelcase = require('camelcase')
+const buildCss = require('tachyons-build-css')
 
 const DEFAULT_CONFIG = require('./config')
 
@@ -13,7 +14,19 @@ module.exports = config => {
   const mediaQueries = extractMediaQueries(_config)
 
   generator.generate = () => generate(_config, mediaQueries)
-  generator.css = () => assembleCss(generator.generate(), _config)
+  generator.css = async () => {
+    const modules = await generator.generate()
+    const post = await assembleCss(modules, _config)
+
+    const min = await buildCss(post, { minified: true })
+    const css = await buildCss(post)
+
+    return {
+      post: post,
+      css: css.css,
+      min: min.css
+    }
+  }
 
   function generator () {}
   return generator
