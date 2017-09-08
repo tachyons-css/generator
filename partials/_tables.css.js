@@ -1,10 +1,4 @@
-module.exports = `/*
-
-  TABLES
-  Docs: http://tachyons.io/docs/elements/tables/
-
-*/
-
+module.exports = `
 .collapse {
     border-collapse: collapse;
     border-spacing: 0;
@@ -32,4 +26,5 @@ module.exports = `/*
 
 .stripe-dark:nth-child(odd) {
   background-color: var(--black-10);
-}`
+}
+`

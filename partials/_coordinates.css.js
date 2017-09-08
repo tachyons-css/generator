@@ -1,30 +1,4 @@
-module.exports = `/*
-
-   COORDINATES
-   Docs: http://tachyons.io/docs/layout/position/
-
-   Use in combination with the position module.
-
-   Base:
-     top
-     bottom
-     right
-     left
-
-   Modifiers:
-     -0  = literal value 0
-     -1  = literal value 1
-     -2  = literal value 2
-     --1 = literal value -1
-     --2 = literal value -2
-
-   Media Query Extensions:
-     -ns = not-small
-     -m  = medium
-     -l  = large
-
-*/
-
+module.exports = `
 .top-0    { top:    0; }
 .right-0  { right:  0; }
 .bottom-0 { bottom: 0; }
@@ -56,4 +30,5 @@ module.exports = `/*
   right: 0;
   bottom: 0;
   left: 0;
-}`
+}
+`

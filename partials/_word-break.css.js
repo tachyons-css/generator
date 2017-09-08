@@ -1,17 +1,5 @@
-module.exports = `/*
-
-  WORD BREAK
-
-   Base:
-     word = word-break
-
-   Media Query Extensions:
-     -ns = not-small
-     -m  = medium
-     -l  = large
-
-*/
-
+module.exports = `
 .word-normal { word-break: normal; }
 .word-wrap { word-break: break-all; }
-.word-nowrap { word-break: keep-all; }`
+.word-nowrap { word-break: keep-all; }
+`

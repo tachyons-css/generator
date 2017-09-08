@@ -1,9 +1,4 @@
-module.exports = `/*
-
-   FORMS
-   
-*/
-
+module.exports = `
 .input-reset {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -13,4 +8,5 @@ module.exports = `/*
 .input-reset::-moz-focus-inner {
   border: 0;
   padding: 0;
-}`
+}
+`

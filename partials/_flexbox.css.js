@@ -1,23 +1,12 @@
-module.exports = `/*
-
-  FLEXBOX
-
-  Media Query Extensions:
-   -ns = not-small
-   -m  = medium
-   -l  = large
-
-*/
-
+module.exports = `
 .flex { display: flex; }
 .inline-flex { display: inline-flex; }
 
-/* 1. Fix for Chrome 44 bug.
- * https://code.google.com/p/chromium/issues/detail?id=506893 */
+
 .flex-auto {
   flex: 1 1 auto;
-  min-width: 0; /* 1 */
-  min-height: 0; /* 1 */
+  min-width: 0; 
+  min-height: 0; 
 }
 
 .flex-none { flex: none; }
@@ -25,6 +14,10 @@ module.exports = `/*
 .flex-column  { flex-direction: column; }
 .flex-row     { flex-direction: row; }
 .flex-wrap    { flex-wrap: wrap; }
+.flex-nowrap    { flex-wrap: nowrap; }
+.flex-wrap-reverse    { flex-wrap: wrap-reverse; }
+.flex-column-reverse  { flex-direction: column-reverse; }
+.flex-row-reverse     { flex-direction: row-reverse; }
 
 .items-start    { align-items: flex-start; }
 .items-end      { align-items: flex-end; }
@@ -60,4 +53,5 @@ module.exports = `/*
 .order-6 { order: 6; }
 .order-7 { order: 7; }
 .order-8 { order: 8; }
-.order-last { order: 99999; }`
+.order-last { order: 99999; }
+`

@@ -1,9 +1,4 @@
-module.exports = `/*
- 
-  BOX SIZING
-
-*/
-
+module.exports = `
 html,
 body,
 div,
@@ -14,8 +9,11 @@ footer,
 header,
 form,
 fieldset,
+legend,
 pre,
 code,
+a,
+h1,h2,h3,h4,h5,h6,
 p,
 ul,
 ol,
@@ -24,6 +22,10 @@ dl,
 dt,
 dd,
 textarea,
+table, 
+td,
+th,
+tr,
 input[type="email"],
 input[type="number"],
 input[type="password"],
@@ -32,4 +34,5 @@ input[type="text"],
 input[type="url"],
 .border-box {
   box-sizing: border-box;
-}`
+}
+`

@@ -1,24 +1,4 @@
-module.exports = `/*
-
-    BACKGROUND POSITION
-
-    Base:
-    bg = background
-
-    Modifiers:
-    -center = center center
-    -top = top center
-    -right = center right
-    -bottom = bottom center
-    -left = center left
-
-    Media Query Extensions:
-      -ns = not-small
-      -m  = medium
-      -l  = large
-
- */
-
+module.exports = `
 .bg-center { 
   background-repeat: no-repeat;
   background-position: center center; 
@@ -42,4 +22,5 @@ module.exports = `/*
 .bg-left {   
   background-repeat: no-repeat; 
   background-position: center left;   
-}`
+}
+`

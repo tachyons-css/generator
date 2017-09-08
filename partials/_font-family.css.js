@@ -1,15 +1,8 @@
-module.exports = `/*
-
-   FONT FAMILY GROUPS
-   Docs: http://tachyons.io/docs/typography/font-family/
-
-*/
-
-
+module.exports = `
 .sans-serif {
   font-family: -apple-system, BlinkMacSystemFont,
                'avenir next', avenir,
-               helvetica, 'helvetica neue',
+               'helvetica neue', helvetica,
                ubuntu,
                roboto, noto,
                'segoe ui', arial,
@@ -31,9 +24,9 @@ module.exports = `/*
 }
 
 
-/* Monospaced Typefaces (for code) */
 
-/* From http://cssfontstack.com */
+
+
 code, .code {
   font-family: Consolas,
                monaco,
@@ -47,7 +40,7 @@ code, .code {
 }
 
 
-/* Sans-Serif Typefaces */
+
 
 .helvetica {
   font-family: 'helvetica neue', helvetica,
@@ -60,7 +53,7 @@ code, .code {
 }
 
 
-/* Serif Typefaces */
+
 
 .athelas {
   font-family: athelas,
@@ -96,4 +89,5 @@ code, .code {
 .baskerville {
   font-family: baskerville,
                serif;
-}`
+}
+`
