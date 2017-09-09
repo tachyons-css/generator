@@ -39,7 +39,7 @@ test('css', async t => {
 
   fs.writeFileSync('out.css', css)
 
-  t.pass()
+  t.snapshot(css)
 })
 
 test('file generation matches Tachyons with the default config', async t => {
