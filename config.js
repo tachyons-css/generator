@@ -48,5 +48,8 @@ module.exports = {
     { "light-red": "#ffd3c0" }
   ],
   "borderWidths": [0, .125, .25, .5, 1, 2],
-  "borderRadius": [0, .125, .25, .5, 1]
+  "borderRadius": [0, .125, .25, .5, 1],
+  "widths": [1, 2, 4, 8, 16],
+  "maxWidths": [1, 2, 4, 8, 16, 32, 48, 64, 96],
+  "heights": [1, 2, 4, 8, 16]
 }
