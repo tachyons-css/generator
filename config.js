@@ -47,5 +47,6 @@ module.exports = {
     { "light-yellow": "#f3dd70" },
     { "light-red": "#ffd3c0" }
   ],
-  "borderWidths": [0, .125, .25, .5, 1, 2]
+  "borderWidths": [0, .125, .25, .5, 1, 2],
+  "borderRadius": [0, .125, .25, .5, 1]
 }

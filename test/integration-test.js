@@ -2,6 +2,7 @@ import test from 'ava'
 import globby from 'globby'
 import camel from 'camelcase'
 import fs from 'fs'
+import path from 'path'
 
 import config from '../config'
 import tachyonsGenerator from '../'
@@ -64,4 +65,4 @@ const processFiles = files => {
 }
 
 const cleanFile = file => camel(file.split('src/')[1].replace('.css', ''))
-const fixture = file => fs.readFileSync(`fixtures/${file}`, 'utf8').trim()
+const fixture = file => fs.readFileSync(path.join(__dirname, `fixtures/${file}`), 'utf8').trim()
