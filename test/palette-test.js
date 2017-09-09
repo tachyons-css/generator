@@ -2,6 +2,7 @@ import test from 'ava'
 import globby from 'globby'
 import camel from 'camelcase'
 import fs from 'fs'
+import path from 'path'
 
 import config from '../config'
 import tachyonsGenerator from '../'
@@ -15,4 +16,4 @@ test('palette is generated for colors array when included in config', async t =>
   t.is(variables.trim(), EXPECTED)
 })
 
-const fixture = file => fs.readFileSync(`fixtures/${file}`, 'utf8').trim()
+const fixture = file => fs.readFileSync(path.join(__dirname, `fixtures/${file}`), 'utf8').trim()
