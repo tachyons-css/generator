@@ -1,11 +1,11 @@
 const React = require('react')
 const e = React.createElement
 
-const Typography = require('./Typography')
+const TypeScale = require('./TypeScale')
 const Measure = require('./Measure')
 
 module.exports = (config, modules) =>
   e('div', null,
-    Typography(config, modules.typeScale),
+    TypeScale(config, modules.typeScale),
     Measure(modules.typography)
   )
