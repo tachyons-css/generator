@@ -1,11 +1,11 @@
 module.exports = {
   "typeScale": [
-    3, 2.25, 1.5, 1.25, 1, 0.875
+    3, 2.25, 1.5, 1.25, 1, 0.875, 0.75
   ],
   "spacing": {
     "root": 8,
     "ratio": 2,
-    "steps": 6
+    "steps": 7
   },
   "customMedia": [
     { "m": 48 },
