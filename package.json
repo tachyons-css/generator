@@ -24,6 +24,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "camelcase": "^4.1.0",
     "cxs": "^6.0.0",
     "is-blank": "^2.1.0",
     "kebab-case": "^1.0.0",
@@ -39,7 +40,6 @@
   },
   "devDependencies": {
     "ava": "^0.22.0",
-    "camelcase": "^4.0.0",
     "globby": "^6.1.0",
     "tachyons": "latest"
   }
