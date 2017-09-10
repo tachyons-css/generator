@@ -8,7 +8,8 @@
   "repository": "tachyons/generate/api",
   "dependencies": {
     "aws-sdk": "^2.6.10",
-    "micro": "^6.1.0"
+    "micro": "^6.1.0",
+    "tachyons-generator": "latest"
   },
   "now": {
     "alias": "publish.tachyons.pub",

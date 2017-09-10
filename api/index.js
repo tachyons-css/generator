@@ -1,62 +1,49 @@
-const { version } = require('./package.json')
-
-const crypto = require('crypto')
-const AWS = require('aws-sdk')
 const {
   json,
   send
 } = require('micro')
 
-AWS.config.update({
-  region: 'us-west-2',
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-})
+const tachyonsGenerator = require('tachyons-generator')
 
-const sts = new AWS.STS()
+const { version } = require('./package.json')
+const hashConfig = require('./lib/hash-config')
+const AWS = require('./lib/aws-client')
+
+const upload = ({ bucket, name, contentType, dir, body }) => {
+  return new Promise((resolve, reject) => {
+    bucket.putObject({
+      Bucket: 'tachyons-pub',
+      Key: `${dir}/${name}`,
+      ContentType: contentType,
+      Body: body,
+      ACL: 'public-read'
+    }, err => err ? reject(err) : resolve())
+  })
+}
 
 module.exports = async (req, res) => {
   try {
     const config = await json(req)
     const hash = hashConfig(config)
-    const token = await getToken(hash)
-    const object = `${version}/${hash}`
+    const dir = `${version}/${hash}`
 
-    send(res, 200, { hash, token, object })
+    const bucket = new AWS.S3()
+
+    const tGenerate = await tachyonsGenerator(config)
+    const tachy = await tGenerate.generate()
+
+    const px = [
+      upload({ bucket, name: 'css/tachyons.css', contentType: 'text/css', dir, body: tachy.css }),
+      upload({ bucket, name: 'css/tachyons.min.css', contentType: 'text/css', dir, body: tachy.min }),
+      upload({ bucket, name: 'config.json', contentType: 'application/json', dir, body: JSON.stringify(tachy.modules, null, 2) }),
+      upload({ bucket, name: 'index.html', contentType: 'text/html', dir, body: tachy.docs })
+    ]
+
+    await Promise.all(px)
+
+    send(res, 200, { url: `https://s3-us-west-1.amazonaws.com/tachyons-pub/${dir}/index.html` })
   } catch (error) {
+    console.log(error)
     send(res, 500, { error })
   }
-}
-
-const getToken = hash => {
-  return new Promise((resolve, reject) => {
-    sts.getFederationToken({
-      Name: hash,
-      DurationSeconds: 900,
-      Policy: JSON.stringify({
-        Version: '2012-10-17',
-        Statement: [{
-          Effect: 'Allow',
-          Action: ['s3:ListBucket'],
-          Resource: [`arn:aws:s3:::tachyons-pub/${version}/${hash}`]
-        }, {
-          Effect: 'Allow',
-          Action: ['s3:PutObject', 's3:PutObjectACL'],
-          Resource: [`arn:aws:s3:::tachyons-pub/${version}/${hash}/*`]
-        }]
-      })
-    }, (err, data) => {
-      err ? reject(err) : resolve(data)
-    })
-  })
-}
-
-const hashConfig = (obj, sha = '256') => {
-  const str = JSON.stringify(obj)
-
-  return crypto
-    .createHash(`sha${sha}`)
-    .update(str)
-    .digest('hex')
-    .slice(0, 32)
 }
