@@ -9,7 +9,11 @@ import tachyonsGenerator from '../'
 
 test.only('palette is generated for colors array when included in config', async t => {
   const tachy = tachyonsGenerator({ palette: '#07cccc' })
-  const { variables } = await tachy.generate()
+  const {
+    modules: {
+      variables
+    }
+  } = await tachy.generate()
 
   const EXPECTED = fixture('palette-variables.css')
 
