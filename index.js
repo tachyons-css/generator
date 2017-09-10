@@ -22,7 +22,8 @@ module.exports = config => {
     const css = await buildCss(post)
 
     return {
-      post: post,
+      post,
+      modules,
       css: css.css,
       min: min.css
     }
