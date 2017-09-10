@@ -1,6 +1,8 @@
 const React = require('react')
 const e = React.createElement
 
+const stripMedia = require('strip-css-media-queries')
+
 const {
   CodeSectionCx: {
     pre,
@@ -8,7 +10,7 @@ const {
   }
 } = require('../style')
 
-module.exports = children =>
+module.exports = css =>
   e('pre', { className: pre },
-    e('code', { className: code }, children)
+    e('code', { className: code }, stripMedia(css))
   )
