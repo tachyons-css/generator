@@ -54,5 +54,6 @@ module.exports = {
   "heights": [1, 2, 4, 8, 16],
   "typography":{
     "measure": [30, 34, 20]
-  }
+  },
+  "opacity": [1, .9, .8, .7, .6, .5, .4, .3, .2, .1, .05, .025, 0]
 }
