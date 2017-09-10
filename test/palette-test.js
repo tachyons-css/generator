@@ -7,7 +7,7 @@ import path from 'path'
 import config from '../config'
 import tachyonsGenerator from '../'
 
-test('palette is generated for colors array when included in config', async t => {
+test.only('palette is generated for colors array when included in config', async t => {
   const tachy = tachyonsGenerator({ palette: '#07cccc' })
   const { variables } = await tachy.generate()
 
