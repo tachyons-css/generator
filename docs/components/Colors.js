@@ -12,21 +12,22 @@ const {
 // Need to use this for palx handling
 const colorify = require('../../lib/color')
 
+const Section = require('./Section')
 const HtmlSection = require('./HtmlSection')
 const CodeSection = require('./CodeSection')
 
 const Colors = config => {
-  const colorMap = colorify(config.colors).colors
+  const colorMap = colorify(config.colors).colorMap
 
-  return Object.keys(colorMap).colors.map(name => {
-    const bgCx = `${td} bg-${name}`
-    const colorCx = `${td} ${name}`
+  return Object.keys(colorMap).map(name => {
+    const colorCx = `${td} ${color} ${name}`
+    const bgCx = `${td} ${bg} bg-${name}`
     const varCx = td
 
     return e('tr', { key: name },
       e('td', { className: bgCx }, null),
       e('td', { className: colorCx }, 'Aa'),
-      e('td', { className: varCx }, `--${name}: colorMap[name]`)
+      e('td', { className: varCx }, `--${name}: ${colorMap[name]}`)
     )
   })
 }
@@ -37,7 +38,10 @@ const ColorsTable = config =>
   )
 
 module.exports = (config, typeScale) =>
-  e('div', { className: 'flex-m flex-l' },
-    HtmlSection(ColorsTable(config)),
-    CodeSection(typeScale)
-  )
+  Section({
+    title: 'Colors',
+    children: [
+      HtmlSection(ColorsTable(config)),
+      CodeSection(typeScale)
+    ]
+  })

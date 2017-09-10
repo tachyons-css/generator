@@ -1,6 +1,7 @@
 const React = require('react')
 const e = React.createElement
 
+const Section = require('./Section')
 const HtmlSection = require('./HtmlSection')
 const CodeSection = require('./CodeSection')
 
@@ -12,7 +13,10 @@ const Headings = config => config.typeScale.map((f, i) => {
 })
 
 module.exports = (config, typeScale) =>
-  e('div', { className: 'flex-m flex-l' },
-    HtmlSection(Headings(config)),
-    CodeSection(typeScale)
-  )
+  Section({
+    title: 'Typography',
+    children: [
+      HtmlSection(Headings(config)),
+      CodeSection(typeScale)
+    ]
+  })

@@ -1,17 +1,25 @@
 const ReactDOMServer = require('react-dom/server')
 
-const tachyonsGenerator = require('../')
-
+const cxs = require('cxs')
 const Layout = require('./components/Layout')
+
 const Styleguide = require('./components/Styleguide')
 
-config = require('../config')
-
-const fn = async () => {
-  const { modules } = await tachyonsGenerator(config).css()
+module.exports = (config, { min, modules }) => {
   const docs = Layout(Styleguide(config, modules))
-  const html = ReactDOMServer.renderToStaticMarkup(docs)
-  console.log(html)
-}
 
-fn()
+  return `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <style>
+          ${min}
+          ${cxs.css()}
+        </style>
+      </head>
+
+      ${ReactDOMServer.renderToStaticMarkup(docs)}
+    </html>
+  `
+}

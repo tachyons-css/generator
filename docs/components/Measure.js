@@ -1,6 +1,7 @@
 const React = require('react')
 const e = React.createElement
 
+const Section = require('./Section')
 const HtmlSection = require('./HtmlSection')
 const CodeSection = require('./CodeSection')
 
@@ -26,7 +27,10 @@ const Measures = () => [
 ]
 
 module.exports = measure =>
-  e('div', { className: 'flex-m flex-l' },
-    HtmlSection(Measures()),
-    CodeSection(measure)
-  )
+  Section({
+    title: 'Measure',
+    children: [
+      HtmlSection(Measures()),
+      CodeSection(measure)
+    ]
+  })

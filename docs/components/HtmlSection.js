@@ -7,4 +7,4 @@ const {
   }
 } = require('../style')
 
-module.exports = children => e('div', { className: wrap}, children)
+module.exports = children => e('div', { className: wrap, key: 'html' }, children)

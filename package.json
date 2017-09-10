@@ -12,7 +12,8 @@
     "partials"
   ],
   "scripts": {
-    "test": "ava -v --timeout=10s"
+    "test": "ava -v --timeout=10s",
+    "docs": "node docs > out.html && open out.html"
   },
   "repository": "johnotander/tachyons-generator",
   "keywords": [

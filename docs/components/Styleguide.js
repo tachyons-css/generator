@@ -11,6 +11,6 @@ module.exports = (config, modules) =>
     Measure(modules.typography),
     Colors(config, [
       modules.colors,
-      modules.backgroundColors()
+      modules.backgroundColors
     ].join('\n'))
   )

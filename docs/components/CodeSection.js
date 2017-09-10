@@ -11,6 +11,6 @@ const {
 } = require('../style')
 
 module.exports = css =>
-  e('pre', { className: pre },
+  e('pre', { className: pre, key: 'code' },
     e('code', { className: code }, stripMedia(css))
   )
