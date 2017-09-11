@@ -1,12 +1,21 @@
 const React = require('react')
 const e = React.createElement
 
+const Hero = require('./Hero')
+const GettingStarted = require('./GettingStarted')
 const TypeScale = require('./TypeScale')
 const Measure = require('./Measure')
 const Colors = require('./Colors')
 
-module.exports = (config, modules) =>
-  e('div', null,
+const hashConfig = require('../../lib/hash-config')
+const { version } = require('../../package')
+
+module.exports = (config, modules) => {
+  const hash = hashConfig(config)
+
+  return e('div', null,
+    Hero(),
+    GettingStarted(hash, version),
     TypeScale(config, modules.typeScale),
     Measure(modules.typography),
     Colors(config, [
@@ -14,3 +23,4 @@ module.exports = (config, modules) =>
       modules.backgroundColors
     ].join('\n'))
   )
+}
