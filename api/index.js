@@ -35,7 +35,8 @@ module.exports = async (req, res) => {
     const px = [
       upload({ bucket, name: 'css/tachyons.css', contentType: 'text/css', dir, body: tachy.css }),
       upload({ bucket, name: 'css/tachyons.min.css', contentType: 'text/css', dir, body: tachy.min }),
-      upload({ bucket, name: 'config.json', contentType: 'application/json', dir, body: JSON.stringify(tachy.modules, null, 2) }),
+      upload({ bucket, name: 'config.json', contentType: 'application/json', dir, body: JSON.stringify(config, null, 2) }),
+      upload({ bucket, name: 'modules.json', contentType: 'application/json', dir, body: JSON.stringify(tachy.modules, null, 2) }),
       upload({ bucket, name: 'index.html', contentType: 'text/html', dir, body: tachy.docs })
     ]
 
