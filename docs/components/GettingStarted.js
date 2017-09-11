@@ -42,8 +42,8 @@ module.exports = (hash, version) =>
       e('h4', { className: 'mb2 ttu' }, 'Start Using'),
       e('a', { className: button, href: 'http://tachyons.io' }, 'Tachyons'),
       e('a', { className: button, href: 'https://github.com/tachyons-css/tachyons-generator' }, 'GitHub'),
-      e('a', { className: button, href: css }, 'Download Css'),
-      e('a', { className: button, href: css }, 'Config'),
-      e('a', { className: button, href: css }, 'Modules')
+      e('a', { className: button, href: css(hash, version) }, 'Download Css'),
+      e('a', { className: button, href: config(hash, version) }, 'Config'),
+      e('a', { className: button, href: modules(hash, version) }, 'Modules')
     )
   )
