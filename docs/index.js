@@ -13,6 +13,7 @@ module.exports = (config, { min, modules }) => {
     <html>
       <head>
         <meta charset="utf-8">
+        <title>CUSTOM TACHYONS - Css Toolkit</title>
         <style>
           ${min}
           ${cxs.css()}

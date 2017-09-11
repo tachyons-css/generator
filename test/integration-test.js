@@ -47,9 +47,10 @@ test('module skipping', async t => {
 test('css', async t => {
   const tachy = tachyonsGenerator(config)
 
-  const { post, css, min } = await tachy.generate()
+  const { css, docs } = await tachy.generate()
 
   fs.writeFileSync('out.css', css)
+  fs.writeFileSync('out.html', docs)
 
   t.snapshot(css)
 })

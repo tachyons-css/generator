@@ -9,7 +9,7 @@ const {
 } = require('../style')
 
 module.exports = ({ title, children }) =>
-  e('article', null,
+  e('article', { className: 'center' },
     e('h3', { className: h3 }, title),
     e('div', { className: wrap }, children)
   )
