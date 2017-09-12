@@ -14,6 +14,15 @@ Inspiration from [this tachyons issue](https://github.com/tachyons-css/tachyons/
 npm i -S tachyons-generator
 ```
 
+Or, use a curl request to generate css and docs
+
+```sh
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -d '{"typeScale": [5,4,3,2,1,0.5] }' \
+     https://tachyons.pub
+```
+
 ## Usage
 
 ```javascript
