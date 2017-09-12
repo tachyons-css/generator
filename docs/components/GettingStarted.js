@@ -29,10 +29,6 @@ const html = (hash, version) => `<html lang="en">
 
 const link = (hash, version) => `<link rel="stylesheet" href="https://tachyons.pub/${version}/${hash}/css/tachyons.min.css" />`
 
-const css = (hash, version) => `https://tachyons.pub/${version}/${hash}/css/tachyons.css`
-const config = (hash, version) => `https://tachyons.pub/${version}/${hash}/config.json`
-const modules = (hash, version) => `https://tachyons.pub/${version}/${hash}/modules.json`
-
 module.exports = (hash, version) =>
   e('article', { className: wrap },
     e('h3', { className: 'f3' }, 'Getting Started'),
@@ -42,8 +38,8 @@ module.exports = (hash, version) =>
       e('h4', { className: 'mb2 ttu' }, 'Start Using'),
       e('a', { className: button, href: 'http://tachyons.io' }, 'Tachyons'),
       e('a', { className: button, href: 'https://github.com/tachyons-css/tachyons-generator' }, 'GitHub'),
-      e('a', { className: button, href: css(hash, version) }, 'Download Css'),
-      e('a', { className: button, href: config(hash, version) }, 'Config'),
-      e('a', { className: button, href: modules(hash, version) }, 'Modules')
+      e('a', { className: button, href: 'css/tachyons.css' }, 'Download Css'),
+      e('a', { className: button, href: 'config.json' }, 'Config'),
+      e('a', { className: button, href: 'modules.json' }, 'Modules')
     )
   )

@@ -5,7 +5,7 @@ const {
 
 const tachyonsGenerator = require('tachyons-generator')
 
-const { version } = require('./package.json')
+const { version } = require('tachyons-generator/package')
 const hashConfig = require('./lib/hash-config')
 const AWS = require('./lib/aws-client')
 
