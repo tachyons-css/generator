@@ -25,6 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "camelcase": "^4.1.0",
+    "colorable": "^1.0.5",
     "cxs": "^6.0.0",
     "is-blank": "^2.1.0",
     "kebab-case": "^1.0.0",

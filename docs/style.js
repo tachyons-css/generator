@@ -86,6 +86,16 @@ module.exports.ColorsCx = {
     fontWeight: 'bold',
     paddingLeft: '2rem',
     paddingRight: '2rem'
+  }),
+  colorTile: cxs({
+    width: '100%',
+    padding: '2rem',
+    '@media screen and (min-width: 40em)': {
+      width: '50%'
+    },
+    '@media screen and (min-width: 60em)': {
+      width: '25%'
+    },
   })
 }
 
