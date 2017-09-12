@@ -11,9 +11,9 @@
     "is-color": "^0.2.0",
     "is-present": "^1.0.0",
     "json-loader": "^0.5.7",
-    "next": "^3.2.1",
+    "next": "^3.2.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "tachyons-generator": "0.1.0"
+    "tachyons-generator": "0.13.0"
   }
 }
