@@ -23,16 +23,34 @@ curl -X POST \
      https://tachyons.pub
 ```
 
+or post the config.json file 
+
+```sh
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -d @config.json
+     https://tachyons.pub
+```
+
 ## Usage
+This will generate an index.html file with the generated style guide as well as a static css file.
 
 ```javascript
+const fs = require('fs')
+
 const tachyonsGenerator = require('tachyons-generator')
 const config = require('./config.json')
 
-const tachy = tachyonsGenerator(config)
+const generate = async () => {
+  const tachy = tachyonsGenerator(config)
 
-const modules = await tachy.generate()
-const css = await tachy.css()
+  const out = await tachy.generate()
+  
+  fs.writeFileSync('index.html', out.docs)
+  fs.writeFileSync('tachyons.css', out.css)
+}
+
+generate()
 ```
 
 #### Example config
@@ -88,17 +106,26 @@ const css = await tachy.css()
     "light-yellow": "#f3dd70",
     "light-red": "#ffd3c0"
   },
-  "borderWidths": [0, .125, .25, .5, 1, 2],
-  "borderRadius": [0, .125, .25, .5, 1],
+  "borderWidths": [0, 0.125, 0.25, 0.5, 1, 2],
+  "borderRadius": [0, 0.125, 0.25, 0.5, 1],
   "widths": [1, 2, 4, 8, 16],
   "maxWidths": [1, 2, 4, 8, 16, 32, 48, 64, 96],
   "heights": [1, 2, 4, 8, 16],
   "typography":{
     "measure": [30, 34, 20]
   },
-  "opacity": [1, .9, .8, .7, .6, .5, .4, .3, .2, .1, .05, .025, 0]
+  "opacity": [1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.05, 0.025, 0]
 }
 ```
+
+#### Example npm commands
+You can automate the generation and publishing using something like this pattern
+```
+  "start": "npm run build && npm run publish",
+  "build": "node index.js",
+  "publish": "curl -X POST -H 'Content-Type: application/json' -d @config.json  https://tachyons.pub"
+```
+
 
 ## License
 
