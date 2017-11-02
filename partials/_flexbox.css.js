@@ -2,11 +2,10 @@ module.exports = `
 .flex { display: flex; }
 .inline-flex { display: inline-flex; }
 
-
 .flex-auto {
   flex: 1 1 auto;
-  min-width: 0; 
-  min-height: 0; 
+  min-width: 0;
+  min-height: 0;
 }
 
 .flex-none { flex: none; }
@@ -24,6 +23,12 @@ module.exports = `
 .items-center   { align-items: center; }
 .items-baseline { align-items: baseline; }
 .items-stretch  { align-items: stretch; }
+
+.flex-grow-0 { flex-grow: 0; }
+.flex-grow-1 { flex-grow: 1; }
+
+.flex-shrink-0 { flex-shrink: 0; }
+.flex-shrink-1 { flex-shrink: 1; }
 
 .self-start    { align-self: flex-start; }
 .self-end      { align-self: flex-end; }
