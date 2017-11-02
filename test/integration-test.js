@@ -15,9 +15,7 @@ test('media-queries are handled correctly', async t => {
     }
   } = await tachy.generate()
 
-  const EXPECTED = fixture('display.css')
-
-  t.is(display.trim(), EXPECTED)
+  t.snapshot(display)
 })
 
 test('type-scale', async t => {
@@ -28,9 +26,7 @@ test('type-scale', async t => {
     }
   } = await tachy.generate()
 
-  const EXPECTED = fixture('type-scale.css')
-
-  t.is(typeScale.trim(), EXPECTED)
+  t.snapshot(typeScale)
 })
 
 test('module skipping', async t => {
@@ -54,5 +50,3 @@ test('css', async t => {
 
   t.snapshot(css)
 })
-
-const fixture = file => fs.readFileSync(path.join(__dirname, `fixtures/${file}`), 'utf8').trim()
