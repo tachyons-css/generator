@@ -28,7 +28,7 @@ or post the config.json file
 ```sh
 curl -X POST \
      -H "Content-Type: application/json" \
-     -d @config.json
+     -d @config.json \
      https://tachyons.pub
 ```
 
