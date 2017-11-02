@@ -1,3 +1,3 @@
 module.exports = `
-.list {         list-style-type: none; }
+.list { list-style-type: none; }
 `
