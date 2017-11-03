@@ -1,6 +1,9 @@
 module.exports = {
   "typeScale": [
-    3, 2.25, 1.5, 1.25, 1, 0.875, 0.75
+    {value: 3, alias: "title"},
+    {value: 2.25, alias: "sub"},
+    {value: 1.5, alias: ["copy", "error"]},
+    1.25, 1, 0.875, 0.75
   ],
   "spacing": {
     "root": 8,
