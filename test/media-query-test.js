@@ -27,6 +27,12 @@ test('handle greater than queries', async t => {
           value: 123,
           minWidth: true
         }
+      },
+      {
+        ns: {
+          value: 1234,
+          maxWidth: true
+        }
       }
     ]
   })
