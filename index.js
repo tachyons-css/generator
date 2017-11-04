@@ -8,11 +8,10 @@ const DEFAULT_CONFIG = require('./config')
 const generateDocs = require('./docs')
 const generate = require('./lib/generate')
 const assembleCss = require('./lib/assemble-css')
-const extractMediaQueries = require('./lib/media-queries')
 
 module.exports = config => {
   const _config = Object.assign({}, DEFAULT_CONFIG, config)
-  const mediaQueries = extractMediaQueries(_config)
+  const mediaQueries = _config.customMedia
 
   generator.generate = async () => {
     const modules = await generate(_config, mediaQueries)
