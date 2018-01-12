@@ -27,7 +27,7 @@ module.exports = `
   margin-bottom: 0;
 }
 
-.nested-copy-seperator p+p {
+.nested-copy-separator p+p {
   margin-top: 1.5em;
 }
 

@@ -24,12 +24,6 @@ module.exports = `
 .items-baseline { align-items: baseline; }
 .items-stretch  { align-items: stretch; }
 
-.flex-grow-0 { flex-grow: 0; }
-.flex-grow-1 { flex-grow: 1; }
-
-.flex-shrink-0 { flex-shrink: 0; }
-.flex-shrink-1 { flex-shrink: 1; }
-
 .self-start    { align-self: flex-start; }
 .self-end      { align-self: flex-end; }
 .self-center   { align-self: center; }
@@ -59,4 +53,10 @@ module.exports = `
 .order-7 { order: 7; }
 .order-8 { order: 8; }
 .order-last { order: 99999; }
+
+.flex-grow-0 { flex-grow: 0; }
+.flex-grow-1 { flex-grow: 1; }
+
+.flex-shrink-0 { flex-shrink: 0; }
+.flex-shrink-1 { flex-shrink: 1; }
 `
