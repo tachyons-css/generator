@@ -48,6 +48,7 @@ const generate = async () => {
   
   fs.writeFileSync('index.html', out.docs)
   fs.writeFileSync('tachyons.css', out.css)
+  fs.writeFileSync('tachyons.min.css', out.min)
 }
 
 generate()

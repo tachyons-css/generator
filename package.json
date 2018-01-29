@@ -12,7 +12,7 @@
     "partials"
   ],
   "scripts": {
-    "test": "ava -v --timeout=10s",
+    "test": "ava -v --timeout=20s",
     "docs": "node docs > out.html && open out.html"
   },
   "repository": "tachyons-css/tachyons-generator",
