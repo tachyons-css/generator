@@ -2,6 +2,7 @@ module.exports = {
   "typeScale": [
     3, 2.25, 1.5, 1.25, 1, 0.875, 0.75
   ],
+  "lineHeight": [1, 1.25, 1.5],
   "spacing": [2, 4, 6, 8, 10, 12, 14],
   "customMedia": [
     { "m": 48 },
