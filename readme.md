@@ -104,6 +104,9 @@ generate()
     "light-yellow": "#f3dd70",
     "light-red": "#ffd3c0"
   },
+  "nested": {
+    "links": ["blue", "light-blue"]
+  },
   "borderWidths": [0, 0.125, 0.25, 0.5, 1, 2],
   "borderRadius": [0, 0.125, 0.25, 0.5, 1],
   "widths": [1, 2, 4, 8, 16],
