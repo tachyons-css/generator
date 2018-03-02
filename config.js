@@ -49,6 +49,10 @@ module.exports = {
   "widths": [1, 2, 4, 8, 16],
   "maxWidths": [1, 2, 4, 8, 16, 32, 48, 64, 96],
   "heights": [1, 2, 4, 8, 16],
+  "tables": {
+    "striped": ["light-silver", "moon-gray", "light-gray", "near-white"],
+    "stripe": ["light", "dark"]
+  },
   "typography":{
     "measure": [30, 34, 20]
   },
