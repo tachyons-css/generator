@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "test": "ava -v --timeout=20s",
-    "docs": "node docs > out.html && open out.html"
+    "docs": "node docs/generate"
   },
   "repository": "tachyons-css/tachyons-generator",
   "keywords": [
