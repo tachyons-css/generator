@@ -23,7 +23,7 @@ curl -X POST \
      https://tachyons.pub
 ```
 
-or post the config.json file 
+or post the config.json file
 
 ```sh
 curl -X POST \
@@ -45,7 +45,7 @@ const generate = async () => {
   const tachy = tachyonsGenerator(config)
 
   const out = await tachy.generate()
-  
+
   fs.writeFileSync('index.html', out.docs)
   fs.writeFileSync('tachyons.css', out.css)
   fs.writeFileSync('tachyons.min.css', out.min)
@@ -120,6 +120,14 @@ generate()
     "measure": [30, 34, 20]
   },
   "opacity": [1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.05, 0.025, 0]
+}
+```
+
+You can also omit the partials you don't need with the key `skipModules`, for example if you don't want normalize.css in the bundle you can do:
+
+```js
+{
+  "skipModules": ["normalize"]
 }
 ```
 
