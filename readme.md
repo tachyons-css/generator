@@ -61,7 +61,7 @@ generate()
   "typeScale": [
     3, 2.25, 1.5, 1.25, 1, 0.875
   ],
-  "spacing": [2, 4, 6, 8, 10, 12, 14],
+  "spacing": [.25, .5, 1, 2, 4, 8, 16],
   "lineHeight": [1, 1.25, 1.5],
   "customMedia": [
     { "m": 48 },
