@@ -20,7 +20,7 @@ Or, use a curl request to generate css and docs
 curl -X POST \
      -H "Content-Type: application/json" \
      -d '{"typeScale": [5,4,3,2,1,0.5] }' \
-     https://tachyons.pub
+     https://tachyons.pub/api
 ```
 
 or post the config.json file
@@ -29,7 +29,7 @@ or post the config.json file
 curl -X POST \
      -H "Content-Type: application/json" \
      -d @config.json \
-     https://tachyons.pub
+     https://tachyons.pub/api
 ```
 
 ## Usage
@@ -136,7 +136,7 @@ You can automate the generation and publishing using something like this pattern
 ```
   "start": "npm run build && npm run publish",
   "build": "node index.js",
-  "publish": "curl -X POST -H 'Content-Type: application/json' -d @config.json  https://tachyons.pub"
+  "publish": "curl -X POST -H 'Content-Type: application/json' -d @config.json  https://tachyons.pub/api"
 ```
 
 
@@ -152,8 +152,6 @@ MIT
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
+---
+
 Crafted with <3 by John Otander ([@4lpine](https://twitter.com/4lpine)).
-
-***
-
-> This package was initially generated with [yeoman](http://yeoman.io) and the [p generator](https://github.com/johnotander/generator-p.git).

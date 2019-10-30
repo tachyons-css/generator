@@ -11,6 +11,9 @@
     "docs",
     "partials"
   ],
+  "workspaces": [
+    "api"
+  ],
   "scripts": {
     "test": "ava -v --timeout=20s",
     "docs": "node docs/generate"

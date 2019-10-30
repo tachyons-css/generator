@@ -1,8 +1,3 @@
-const {
-  json,
-  send
-} = require('micro')
-
 const tachyonsGenerator = require('tachyons-generator')
 
 const { version } = require('tachyons-generator/package')
@@ -23,7 +18,7 @@ const upload = ({ bucket, name, contentType, dir, body }) => {
 
 module.exports = async (req, res) => {
   try {
-    const config = await json(req)
+    const config = req.body
     const hash = hashConfig(config)
     const dir = `${version}/${hash}`
 
@@ -42,9 +37,9 @@ module.exports = async (req, res) => {
 
     await Promise.all(px)
 
-    send(res, 200, { url: `https://s3-us-west-1.amazonaws.com/tachyons-pub/${dir}/index.html` })
+    res.json({ url: `https://s3-us-west-1.amazonaws.com/tachyons-pub/${dir}/index.html` })
   } catch (error) {
     console.log(error)
-    send(res, 500, { error })
+    res.json({ error })
   }
 }

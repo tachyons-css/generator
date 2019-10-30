@@ -1,2 +1,0 @@
-yarn test v1.0.1
-$ ava -v --timeout=10s "w-90"

@@ -1,0 +1,13 @@
+{
+  "alias": ["publish.tachyons.pub"],
+  "builds": [
+    {
+      "src": "api/index.js",
+      "use": "@now/node"
+    }
+  ],
+  "env": {
+    "TACHYONS_AWS_ACCESS_KEY_ID": "@tachyons-aws-access-key-id",
+    "TACHYONS_AWS_SECRET_ACCESS_KEY": "@tachyons-aws-secret-access-key"
+  }
+}
