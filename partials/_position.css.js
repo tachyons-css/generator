@@ -3,5 +3,4 @@ module.exports = `
 .relative  { position: relative; }
 .absolute  { position: absolute; }
 .fixed  { position: fixed; }
-.sticky { position: sticky; }
-`
+.sticky { position: sticky; }`
