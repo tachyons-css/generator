@@ -11,7 +11,7 @@
     "is-color": "^0.2.0",
     "is-present": "^1.0.0",
     "json-loader": "^0.5.7",
-    "next": "^5.0.0",
+    "next": "^9.3.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "tachyons-generator": "0.20.0"
