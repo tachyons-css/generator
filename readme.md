@@ -14,26 +14,11 @@ Inspiration from [this tachyons issue](https://github.com/tachyons-css/tachyons/
 npm i -S tachyons-generator
 ```
 
-Or, use a curl request to generate css and docs
-
-```sh
-curl -X POST \
-     -H "Content-Type: application/json" \
-     -d '{"typeScale": [5,4,3,2,1,0.5] }' \
-     https://tachyons.pub/api
-```
-
-or post the config.json file
-
-```sh
-curl -X POST \
-     -H "Content-Type: application/json" \
-     -d @config.json \
-     https://tachyons.pub/api
-```
-
 ## Usage
-This will generate an index.html file with the generated style guide as well as a static css file.
+
+This package includes a module you can use programmatically to generate a `.css` file, a minimized version of the same, and an `.html` that demonstrates the classes in the `.css` file.
+
+First, a file named `index.js` with the following contents:
 
 ```javascript
 const fs = require('fs')
@@ -54,14 +39,14 @@ const generate = async () => {
 generate()
 ```
 
-#### Example config
+Next, create `config.json` which will control the specifics of the classes in the `.css` file.  Here is an example to start from:
 
-```js
+```json
 {
   "typeScale": [
     3, 2.25, 1.5, 1.25, 1, 0.875
   ],
-  "spacing": [.25, .5, 1, 2, 4, 8, 16],
+  "spacing": [0.25, 0.5, 1, 2, 4, 8, 16],
   "lineHeight": [1, 1.25, 1.5],
   "customMedia": [
     { "m": 48 },
@@ -123,6 +108,16 @@ generate()
 }
 ```
 
+Now, generate everything like so:
+
+```
+> node index.js
+```
+
+This will create `tachyons.css`, `tachyons.min.css`, and `index.html`.  If you open `index.html` in your browser, you should see a style guide and some documentation.
+
+### Advanced Usage
+
 You can also omit the partials you don't need with the key `skipModules`, for example if you don't want normalize.css in the bundle you can do:
 
 ```js
@@ -130,15 +125,6 @@ You can also omit the partials you don't need with the key `skipModules`, for ex
   "skipModules": ["normalize"]
 }
 ```
-
-#### Example npm commands
-You can automate the generation and publishing using something like this pattern
-```
-  "start": "npm run build && npm run publish",
-  "build": "node index.js",
-  "publish": "curl -X POST -H 'Content-Type: application/json' -d @config.json  https://tachyons.pub/api"
-```
-
 
 ## License
 
